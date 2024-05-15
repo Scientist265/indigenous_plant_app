@@ -1,0 +1,71 @@
+name: indigenous_plant
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  google_fonts: ^6.2.1
+  hooks_riverpod: ^2.5.1
+  
+  # cloud_firestore: ^4.8.4
+  # firebase_auth: ^4.7.2
+  # firebase_core: ^2.15.0
+  # firebase_storage: ^11.2.5
+  
+  # birthday date picker
+  flutter_holo_date_picker: ^1.1.3
+  # for providing icons
+  font_awesome_flutter: ^10.5.0
+
+  # formatting dates and timeago
+  jiffy: ^6.2.1
+
+  # generating ids for users
+  uuid: ^4.2.2
+
+  # state management
+  flutter_riverpod: ^2.3.7
+
+  # show toast message
+  fluttertoast: ^8.2.2
+
+  # pick images
+  image_picker: ^1.0.2
+
+  # play videos
+  video_player: ^2.0.4
+  flutter_screenutil: ^5.9.0
+  iconify_flutter: ^0.0.5
+  flutter_svg: ^1.1.6
+
+  # firebase_app_check: ^0.2.1+8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^3.0.2
+
+flutter:
+
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/svg_logo/
