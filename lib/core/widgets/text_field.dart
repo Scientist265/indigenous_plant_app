@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 
-class RoundTextField extends StatelessWidget {
+class RoundTextField extends StatefulWidget {
   const RoundTextField(
       {super.key,
       required this.controller,
       required this.hintText,
-      this.isPassword = false,
       this.keyBoardType = TextInputType.text,
       required this.textInputAction,
-      this.validator});
+      this.validator,
+      this.isPassword = false,
+      this.suffixicon});
 
   final TextEditingController controller;
   final String hintText;
@@ -18,15 +19,22 @@ class RoundTextField extends StatelessWidget {
   final TextInputType keyBoardType;
   final TextInputAction textInputAction;
   final String? Function(String?)? validator;
+  final Widget? suffixicon;
 
+  @override
+  State<RoundTextField> createState() => _RoundTextFieldState();
+}
+
+class _RoundTextFieldState extends State<RoundTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      controller: widget.controller,
       decoration: InputDecoration(
+        suffixIcon: widget.suffixicon ?? const SizedBox(),
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-        hintText: hintText,
+        hintText: widget.hintText,
         hintStyle: GoogleFonts.poppins(
           fontSize: 16,
           fontWeight: FontWeight.normal,
@@ -66,10 +74,10 @@ class RoundTextField extends StatelessWidget {
           ),
         ),
       ),
-      obscureText: isPassword,
-      keyboardType: keyBoardType,
-      textInputAction: textInputAction,
-      validator: validator,
+      obscureText: widget.isPassword,
+      keyboardType: widget.keyBoardType,
+      textInputAction: widget.textInputAction,
+      validator: widget.validator,
     );
   }
 }

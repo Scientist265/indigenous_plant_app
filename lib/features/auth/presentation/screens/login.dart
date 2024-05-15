@@ -103,7 +103,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {},
                     label: "Sign In",
                   ),
-                  20.ht,
+                  10.ht,
+                  const Center(
+                    child: ReusableText(
+                      text: "Or",
+                      textColor: AppColors.blackColor,
+                      weight: FontWeight.bold,
+                    ),
+                  ),
+                  10.ht,
                   GoogleSignButton(
                       onPressed: () {}, label: "Sign In with Google"),
                   50.ht,

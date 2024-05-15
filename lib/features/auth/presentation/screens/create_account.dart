@@ -1,163 +1,164 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:indigenous_plant/common/text_widget.dart';
+import 'package:indigenous_plant/config/text_styles.dart';
+import 'package:indigenous_plant/core/constants/app_colors.dart';
+import 'package:indigenous_plant/core/constants/constants.dart';
+import 'package:indigenous_plant/core/constants/extension.dart';
+import 'package:indigenous_plant/core/widgets/round_button.dart';
+import 'package:indigenous_plant/core/widgets/text_field.dart';
 
-import '../../../../core/constants/app_colors.dart';
-import '../../../../core/constants/constants.dart';
-import '../../../../core/constants/sizing.dart';
-import '../../../../core/screens/loader.dart';
-import '../../../../core/widgets/round_button.dart';
-import '../../../../core/widgets/text_field.dart';
-import '../../utils/utils.dart';
-import '../widgets/birthday_picker.dart';
-import '../widgets/gender_picker.dart';
-
-final _formKey = GlobalKey<FormState>();
-
-class CreateAccountScreen extends ConsumerStatefulWidget {
-  const CreateAccountScreen({super.key});
-
-  static const routeName = "/create-account";
+class CreateAccount extends StatefulWidget {
+  const CreateAccount({super.key});
 
   @override
-  ConsumerState<CreateAccountScreen> createState() =>
-      _CreateAccountScreenState();
+  State<CreateAccount> createState() => _CreateAccountState();
 }
 
-class _CreateAccountScreenState extends ConsumerState<CreateAccountScreen> {
-  // File? image;
-  String gender = "male";
-  DateTime? birthday;
-  bool isLoading = false;
-  // controllers
-  final _fNameController = TextEditingController();
-  final _lNameController = TextEditingController();
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+class _CreateAccountState extends State<CreateAccount> {
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  bool isPassword = false;
 
   @override
   void dispose() {
-    _fNameController.dispose();
-    _lNameController.dispose();
-    _emailController.dispose();
-    _passwordController.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 
-  // Future<void> createAccount() async {
-  //   if (_formKey.currentState!.validate()) {
-  //     _formKey.currentState!.save();
-  //     setState(() {
-  //       isLoading = true;
-  //     });
-  //     await ref
-  //         .read(authProvider)
-  //         .createAccount(
-  //           fullName: "${_fNameController.text} ${_lNameController.text}",
-  //           birthday: birthday ?? DateTime.now(),
-  //           gender: gender,
-  //           email: _emailController.text,
-  //           password: _passwordController.text,
-  //           // image: image,
-  //         )
-  //         .then((credential) {
-  //       if (!credential!.user!.emailVerified) {
-  //         showToastMessage(text: "Account created succesfully");
-  //         Navigator.pop(context);
-  //       }
-  //     }).catchError((_) {
-  //       setState(() => isLoading = false);
-  //     });
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.realWhiteColor,
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: Constants.defaultPadding,
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                GestureDetector(
-                  onTap: () async {
-                    // image = await pickImage();
-                    setState(() {});
-                  },
-                  // child: PickImageWidget(
-                  //   image: image,
-                  // ),
-                ),
-                gaph20,
-                Row(
-                  children: [
-                    Expanded(
-                      child: RoundTextField(
-                        controller: _fNameController,
-                        hintText: "First Name",
-                        textInputAction: TextInputAction.next,
-                        validator: validateName,
+    return Container(
+      color: AppColors.realWhiteColor,
+      child: SafeArea(
+        child: Scaffold(
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: Constants.defaultPadding,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const ReusableText(
+                    text: "Register",
+                    fontSizing: 25,
+                    weight: FontWeight.bold,
+                  ),
+                  6.ht,
+                  Text(
+                    "Create Your Account",
+                    style: ApptextStyles.kPrimaryStyle
+                        .copyWith(fontSize: 14, color: AppColors.darkGreyColor),
+                  ),
+                  20.ht,
+                  Center(
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 20),
+                      height: MediaQuery.of(context).size.width * .5,
+                      width: MediaQuery.of(context).size.width * .5,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/authImage.png"),
+                        ),
                       ),
                     ),
-                    gapW8,
-                    Expanded(
-                      child: RoundTextField(
-                        controller: _lNameController,
-                        hintText: "Last Name",
-                        textInputAction: TextInputAction.next,
-                        validator: validateName,
+                  ),
+                  GoogleSignButton(
+                      onPressed: () {}, label: "Sign In with Google"),
+                  10.ht,
+                  const Center(
+                    child: ReusableText(
+                      text: "Or",
+                      textColor: AppColors.blackColor,
+                      weight: FontWeight.bold,
+                    ),
+                  ),
+                  10.ht,
+                  const ReusableText(
+                    text: "Name",
+                  ),
+                  6.ht,
+                  RoundTextField(
+                    controller: nameController,
+                    hintText: "Joe John",
+                    textInputAction: TextInputAction.next,
+                  ),
+                  20.ht,
+                  const ReusableText(
+                    text: "Email",
+                  ),
+                  6.ht,
+                  RoundTextField(
+                    controller: emailController,
+                    hintText: "joejohn@gmail.com",
+                    textInputAction: TextInputAction.next,
+                  ),
+                  20.ht,
+                  const ReusableText(
+                    text: "Password",
+                  ),
+                  6.ht,
+                  RoundTextField(
+                    isPassword: isPassword,
+                    suffixicon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          isPassword = !isPassword;
+                        });
+                      },
+                      icon: Icon(
+                        isPassword ? Icons.visibility : Icons.visibility_off,
+                        color: isPassword
+                            ? AppColors.darkGreyColor
+                            : AppColors.tealColor,
                       ),
                     ),
-                  ],
-                ),
-                gaph20,
-                BirthdayPickerWidget(
-                  dateTime: birthday ?? DateTime.now(),
-                  onPressed: () async {
-                    birthday = await pickSimpleDate(
-                      context: context,
-                      date: birthday,
-                    );
-                    setState(() {});
-                  },
-                ),
-                gaph20,
-                GenderPicker(
-                    gender: gender,
-                    onChanged: (value) {
-                      gender = value ?? "male";
-                      setState(() {});
-                    }),
-                gaph20,
-                RoundTextField(
-                  controller: _emailController,
-                  hintText: "Email",
-                  textInputAction: TextInputAction.next,
-                  validator: validateEmail,
-                  keyBoardType: TextInputType.emailAddress,
-                ),
-                gaph20,
-                RoundTextField(
-                  controller: _passwordController,
-                  hintText: "Password",
-                  textInputAction: TextInputAction.done,
-                  validator: validatePassword,
-                  isPassword: true,
-                  keyBoardType: TextInputType.visiblePassword,
-                ),
-                gaph20,
-                isLoading
-                    ? const Center(
-                        child: Loader(),
+                    controller: passwordController,
+                    hintText: "Enter Your Password",
+                    textInputAction: TextInputAction.next,
+                  ),
+                  10.ht,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Text(
+                          "Forgot Password?",
+                          style: ApptextStyles.kPrimaryStyle.copyWith(
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.tealColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  40.ht,
+                  RoundButton(
+                    onPressed: () {},
+                    label: "Sign Up",
+                  ),
+                  50.ht,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      const ReusableText(
+                        text: "Already have an account?",
+                        textColor: AppColors.darkGreyColor,
+                      ),
+                      6.wt,
+                      const ReusableText(
+                        text: "Log In",
+                        textColor: AppColors.tealColor,
                       )
-                    : RoundButton(
-                        label: "Create Account",
-                       onPressed: (){},
-                      )
-              ],
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),

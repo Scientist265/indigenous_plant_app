@@ -6,7 +6,7 @@ import '../features/screens/splash_screen.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   splashRoute: (p0) => const SplashScreen(),
-  signUpRoute: (p0) => const CreateAccountScreen(),
+  signUpRoute: (p0) => const CreateAccount(),
   loginRoute: (p0) => const LoginScreen(),
 };
 
