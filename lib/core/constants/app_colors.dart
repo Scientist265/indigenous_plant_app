@@ -6,6 +6,6 @@ class AppColors {
   static const realWhiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF121213);
   static const tealColor = Color(0xFF507B68);
-
+  static const neutralColor = Color(0xFFE8E9ED);
   AppColors._();
 }

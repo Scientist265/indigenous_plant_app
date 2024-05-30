@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +6,9 @@ import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/features/navbar/presentation/screens/home/widgets/suggest_grid_view.dart';
+import 'package:indigenous_plant/features/search/custom_text_field.dart';
+import 'package:indigenous_plant/features/search/category_search.dart';
+import 'package:indigenous_plant/features/search/features/most_recent_search.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,6 +25,42 @@ class HomePage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 // Header Search, Drawer, Dropmenu
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    const Icon(
+                      Icons.menu,
+                      size: 40,
+                    ),
+                    15.wt,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const MostRecentSearch(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 35,
+                        width: Constants.kWidth * .75,
+                        decoration: BoxDecoration(
+                            color: AppColors.realWhiteColor,
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                                color: AppColors.blackColor, width: .6),
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: .5,
+                                spreadRadius: .2,
+                              )
+                            ]),
+                      ),
+                    ),
+                    // CustomTextField(),
+                  ],
+                ),
                 Text(
                   "Welcome,",
                   style: ApptextStyles.kHeaderStyle,
@@ -88,7 +126,13 @@ class HomePage extends StatelessWidget {
                           ),
                           6.ht,
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const MostRecentSearch(),
+                                ),
+                              );
+                            },
                             child: Card(
                               color: AppColors.tealColor,
                               child: Padding(
