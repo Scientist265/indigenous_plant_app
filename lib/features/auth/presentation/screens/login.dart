@@ -7,6 +7,8 @@ import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/core/widgets/text_field.dart';
 
+import '../../../../config/routes.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -100,7 +102,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   40.ht,
                   RoundButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(homeRoute);
+                    },
                     label: "Sign In",
                   ),
                   10.ht,
@@ -124,9 +128,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         textColor: AppColors.darkGreyColor,
                       ),
                       6.wt,
-                      const ReusableText(
-                        text: "Register",
-                        textColor: AppColors.tealColor,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(signUpRoute);
+                        },
+                        child: const ReusableText(
+                          text: "Register",
+                          textColor: AppColors.tealColor,
+                        ),
                       )
                     ],
                   )

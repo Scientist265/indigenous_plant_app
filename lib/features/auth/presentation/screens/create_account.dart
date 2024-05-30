@@ -7,6 +7,8 @@ import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/core/widgets/text_field.dart';
 
+import '../../../../config/routes.dart';
+
 class CreateAccount extends StatefulWidget {
   const CreateAccount({super.key});
 
@@ -151,9 +153,14 @@ class _CreateAccountState extends State<CreateAccount> {
                         textColor: AppColors.darkGreyColor,
                       ),
                       6.wt,
-                      const ReusableText(
-                        text: "Log In",
-                        textColor: AppColors.tealColor,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed(loginRoute);
+                        },
+                        child: const ReusableText(
+                          text: "Log In",
+                          textColor: AppColors.tealColor,
+                        ),
                       )
                     ],
                   )

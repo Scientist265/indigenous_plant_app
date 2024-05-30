@@ -19,4 +19,9 @@ class ApptextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.realWhiteColor,
   );
+  static TextStyle kHeaderStyle = GoogleFonts.poppins(
+    fontSize: 28,
+    color: AppColors.blackColor,
+    fontWeight: FontWeight.w600,
+  );
 }
