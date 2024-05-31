@@ -16,8 +16,7 @@ class CategorySearch extends StatefulWidget {
 }
 
 class _CategorySearchState extends State<CategorySearch> {
-
-  //TODO : Create FilteredCategory 
+  //TODO : Create FilteredCategory
   List<String> filteredPlants = [];
   void filteredItems(String query) {
     setState(() {
@@ -64,10 +63,14 @@ class _CategorySearchState extends State<CategorySearch> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (_) => PlantDetailPage(
-                                    imgPath: "${plant.imgPath}",
-                                    plantName: "${plant.plantName}",
-                                    images: plant.images,
-                                    plantDesc: "${plant.description}"),
+                                  imgPath: "${plant.imgPath}",
+                                  plantName: "${plant.plantName}",
+                                  images: plant.images,
+                                  plantDesc: "${plant.description}",
+                                  economicValue: '${plant.economicValue}',
+                                  localValue: '${plant.localValue}',
+                                  habitat: '${plant.habitat}',
+                                ),
                               ),
                             );
                           },

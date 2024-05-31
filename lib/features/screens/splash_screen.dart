@@ -1,10 +1,23 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class SplashScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:indigenous_plant/config/routes.dart';
+
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
   Widget build(BuildContext context) {
+    Timer(
+      const Duration(seconds: 3),
+      () => Navigator.of(context).pushReplacementNamed(signUpRoute),
+    );
+
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -19,7 +32,6 @@ class SplashScreen extends StatelessWidget {
           child: Column(
             children: [
               Image.asset("assets/images/logo.png"),
-              
             ],
           ),
         ),

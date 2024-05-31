@@ -33,6 +33,9 @@ class SuggestedGridView extends StatelessWidget {
                     plantName: "${plants.plantName}",
                     images: plants.images,
                     plantDesc: "${plants.description}",
+                    economicValue: '${plants.economicValue}',
+                    localValue: '${plants.localValue}',
+                    habitat: '${plants.habitat}',
                   ),
                 ),
               );

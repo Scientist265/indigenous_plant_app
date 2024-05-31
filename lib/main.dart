@@ -20,7 +20,7 @@ class PlantApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AppTheme.appTheme(),
-            initialRoute: navBarRoute,
+            initialRoute: splashRoute,
             routes: routes,
           );
         });

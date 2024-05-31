@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   40.ht,
                   RoundButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(homeRoute);
+                      Navigator.of(context).pushReplacementNamed(navBarRoute);
                     },
                     label: "Sign In",
                   ),
