@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "386525484164",
+    "project_id": "indigenous-plants-app",
+    "storage_bucket": "indigenous-plants-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386525484164:android:04d2c126743989107dded1",
+        "android_client_info": {
+          "package_name": "com.example.indigenous_plant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKkdC3Ny8DUSG5pMxkgeUsc2Zs1bGm4U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

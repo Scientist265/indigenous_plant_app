@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:indigenous_plant/config/routes.dart';
+import 'package:indigenous_plant/config/text_styles.dart';
+import 'package:indigenous_plant/core/constants/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,12 +30,19 @@ class _SplashScreenState extends State<SplashScreen> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
-          child: Column(
-            children: [
-              Image.asset("assets/images/logo.png"),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset("assets/images/logo.png"),
+            Text(
+              "INDIGENOUS PLANTS",
+              style: ApptextStyles.kHeaderStyle.copyWith(
+                color: AppColors.neutralColor,
+              ),
+            )
+          ],
         ),
       ),
     );

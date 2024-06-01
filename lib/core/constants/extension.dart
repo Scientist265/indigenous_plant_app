@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:jiffy/jiffy.dart';
+// import 'package:jiffy/jiffy.dart';
 
-extension FormatDate on DateTime {
-  String yMMMEd() => Jiffy.parseFromDateTime(this).yMMMEd;
-}
+// extension FormatDate on DateTime {
+//   String yMMMEd() => Jiffy.parseFromDateTime(this).yMMMEd;
+// }
 
-extension FormatDate2 on DateTime {
-  String jm() => Jiffy.parseFromDateTime(this).jm;
-}
+// extension FormatDate2 on DateTime {
+//   String jm() => Jiffy.parseFromDateTime(this).jm;
+// }
 
-extension FromNow on DateTime {
-  String fromNow() => Jiffy.parseFromDateTime(this).fromNow();
-}
+// extension FromNow on DateTime {
+//   String fromNow() => Jiffy.parseFromDateTime(this).fromNow();
+// }
 
 extension IntExtensions on int? {
   /// validate given int is not null return given value if null
