@@ -51,7 +51,7 @@ class SuggestedGridView extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    height: 124,
+                    height: 110,
                     width: 128,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6),
@@ -59,7 +59,7 @@ class SuggestedGridView extends StatelessWidget {
                             image: AssetImage(
                               "${plants.imgPath}",
                             ),
-                            fit: BoxFit.cover)),
+                            fit: BoxFit.fitHeight)),
                   ),
                   12.ht,
                   Text(
