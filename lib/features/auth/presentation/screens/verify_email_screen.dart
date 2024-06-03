@@ -2,7 +2,7 @@ import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
 import "package:indigenous_plant/core/constants/extension.dart";
-import "package:indigenous_plant/features/navbar/presentation/screens/home/home_dart.dart";
+import "package:indigenous_plant/features/navbar/home/home_dart.dart";
 
 import "../../../../core/constants/constants.dart";
 import "../../../../core/utils/utils.dart";
@@ -11,6 +11,7 @@ import "../../providers/auth_provider.dart";
 
 class VerifyEmailScreen extends ConsumerWidget {
   const VerifyEmailScreen({super.key});
+  static const routeName = "/verify-screen";
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

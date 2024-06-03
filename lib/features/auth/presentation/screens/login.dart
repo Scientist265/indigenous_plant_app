@@ -8,15 +8,17 @@ import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/core/widgets/text_field.dart';
+import 'package:indigenous_plant/features/auth/presentation/screens/create_account.dart';
 
 import '../../../../config/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../providers/auth_provider.dart';
 
-final _formKey = GlobalKey<FormState>();
+
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
+  static const routeName = "/login-account";
 
   @override
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
@@ -26,7 +28,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool isLoading = false;
-
+final _formKey = GlobalKey<FormState>();
   Future<void> login() async {
     try {
       if (_formKey.currentState!.validate()) {
@@ -157,7 +159,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         6.wt,
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).pushNamed(signUpRoute);
+                            Navigator.of(context)
+                                .pushNamed(CreateAccount.routeName);
                           },
                           child: const ReusableText(
                             text: "Register",

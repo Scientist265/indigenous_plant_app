@@ -1,10 +1,8 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:indigenous_plant/features/auth/models/user_model.dart';
-
 import '../../../core/constants/firebase_collection_names.dart';
 import '../../../core/constants/storage_folder_names.dart';
 import '../../../core/utils/utils.dart';

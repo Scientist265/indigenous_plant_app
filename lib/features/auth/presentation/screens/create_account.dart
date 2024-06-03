@@ -11,12 +11,12 @@ import 'package:indigenous_plant/core/screens/loader.dart';
 import 'package:indigenous_plant/core/utils/utils.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/core/widgets/text_field.dart';
+import 'package:indigenous_plant/features/auth/presentation/screens/login.dart';
+import 'package:indigenous_plant/features/auth/presentation/screens/verify_email_screen.dart';
 import 'package:indigenous_plant/features/auth/utils/utils.dart';
 
 import '../../../../config/routes.dart';
 import '../../providers/auth_provider.dart';
-
-final _createAccountFormKey = GlobalKey<FormState>();
 
 class CreateAccount extends ConsumerStatefulWidget {
   const CreateAccount({super.key});
@@ -36,6 +36,8 @@ class _CreateAccountState extends ConsumerState<CreateAccount> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool isPassword = false;
+
+  final _createAccountFormKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -64,7 +66,7 @@ class _CreateAccountState extends ConsumerState<CreateAccount> {
           .then((credential) {
         if (!credential!.user!.emailVerified) {
           showToastMessage(text: "Account created successfully");
-          Navigator.of(context).popAndPushNamed(homeRoute);
+          Navigator.of(context).popAndPushNamed(VerifyEmailScreen.routeName);
         }
       }).catchError((_) {
         setState(() {
@@ -72,7 +74,7 @@ class _CreateAccountState extends ConsumerState<CreateAccount> {
         });
       });
     }
-  }
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -97,8 +99,8 @@ class _CreateAccountState extends ConsumerState<CreateAccount> {
                     6.ht,
                     Text(
                       "Create Your Account",
-                      style: ApptextStyles.kPrimaryStyle
-                          .copyWith(fontSize: 14, color: AppColors.darkGreyColor),
+                      style: ApptextStyles.kPrimaryStyle.copyWith(
+                          fontSize: 14, color: AppColors.darkGreyColor),
                     ),
                     20.ht,
                     Center(
@@ -208,7 +210,8 @@ class _CreateAccountState extends ConsumerState<CreateAccount> {
                         6.wt,
                         GestureDetector(
                           onTap: () {
-                            Navigator.of(context).pushNamed(loginRoute);
+                            Navigator.of(context)
+                                .pushNamed(LoginScreen.routeName);
                           },
                           child: const ReusableText(
                             text: "Log In",

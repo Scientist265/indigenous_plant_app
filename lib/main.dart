@@ -7,9 +7,10 @@ import 'package:indigenous_plant/config/routes.dart';
 import 'package:indigenous_plant/core/constants/storage_folders.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:indigenous_plant/core/screens/loader.dart';
+import 'package:indigenous_plant/core/screens/splash_screen.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/login.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/verify_email_screen.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/home_dart.dart';
+import 'package:indigenous_plant/features/navbar/home/home_dart.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -46,7 +47,7 @@ class PlantApp extends StatelessWidget {
                   }
                   if (snapshot.hasData) {
                     if (user!.emailVerified) {
-                      return const HomePage();
+                      return const SplashScreen();
                     } else {
                       return const VerifyEmailScreen();
                     }

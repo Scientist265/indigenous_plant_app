@@ -6,14 +6,13 @@ import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/widgets/suggest_grid_view.dart';
-import 'package:indigenous_plant/features/search/features/most_recent_search.dart';
+import 'package:indigenous_plant/features/navbar/home/widgets/suggest_grid_view.dart';
+import 'package:indigenous_plant/features/navbar/home/search/features/most_recent_search.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
-    static const routeName = "/home-screen";
-
+  static const routeName = "/home-screen";
 
   @override
   ConsumerState<HomePage> createState() => _HomePageState();

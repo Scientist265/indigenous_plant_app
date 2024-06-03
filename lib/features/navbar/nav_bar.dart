@@ -1,12 +1,12 @@
 import "package:flutter/material.dart";
 import "package:google_nav_bar/google_nav_bar.dart";
 import "package:indigenous_plant/core/constants/app_colors.dart";
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/home_dart.dart';
+import 'package:indigenous_plant/features/navbar/home/home_dart.dart';
 
-import "../../../../core/constants/constants.dart";
-import "../screens/favourite/favourite.dart";
-import "../screens/notification/notification.dart";
-import "../screens/profile/profile.dart";
+import "../../core/constants/constants.dart";
+import "favourite/favourite.dart";
+import "notification/notification.dart";
+import "profile/profile.dart";
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
