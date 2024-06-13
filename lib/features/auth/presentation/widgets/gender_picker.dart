@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constants/app_colors.dart';
+import '../../../../shared/constants/app_colors.dart';
 import 'gender_radio.dart';
 
 class GenderPicker extends StatelessWidget {

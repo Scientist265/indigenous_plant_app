@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:indigenous_plant/config/text_styles.dart';
-import 'package:indigenous_plant/core/constants/app_colors.dart';
-import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/core/widgets/round_button.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/models/suggestion.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/plant_detail_page.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/widgets/suggest_grid_view.dart';
+import 'package:indigenous_plant/core/config/text_styles.dart';
+import 'package:indigenous_plant/shared/constants/app_colors.dart';
+import 'package:indigenous_plant/shared/constants/extension.dart';
+import 'package:indigenous_plant/shared/reusable_widget/round_button.dart';
+import 'package:indigenous_plant/features/home/models/suggestion.dart';
+import 'package:indigenous_plant/features/home/widgets/suggest_grid_view.dart';
 import 'package:indigenous_plant/features/search/category_search.dart';
 
 import '../custom_text_field.dart';

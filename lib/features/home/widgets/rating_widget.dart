@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'package:indigenous_plant/core/constants/app_colors.dart';
+import 'package:indigenous_plant/shared/constants/app_colors.dart';
 
 class RatingWidget extends StatefulWidget {
   const RatingWidget({super.key});

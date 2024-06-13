@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_firs
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/constants.dart';
-import '../../../core/constants/firebase_field_names.dart';
+import '../../../shared/constants/constants.dart';
+import '../../../shared/constants/firebase_field_names.dart';
 
 @immutable
 class UserModel {

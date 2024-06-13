@@ -50,6 +50,8 @@ dependencies:
   cloud_firestore: ^4.17.5
   firebase_storage: ^11.7.7
   device_preview: ^1.1.0
+  supabase_flutter: ^2.5.5
+  get_it: ^7.7.0
 
   # firebase_app_check: ^0.2.1+8
 

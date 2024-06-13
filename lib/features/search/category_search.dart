@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:indigenous_plant/config/text_styles.dart';
-import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/models/suggestion.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/plant_detail_page.dart';
+import 'package:indigenous_plant/core/config/text_styles.dart';
+import 'package:indigenous_plant/shared/constants/extension.dart';
+import 'package:indigenous_plant/features/home/models/suggestion.dart';
+import 'package:indigenous_plant/features/home/plant_detail_page.dart';
 
-import '../../core/constants/app_colors.dart';
+import '../../shared/constants/app_colors.dart';
 import 'custom_text_field.dart';
 
 class CategorySearch extends StatefulWidget {

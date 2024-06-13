@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:indigenous_plant/config/text_styles.dart';
-import 'package:indigenous_plant/core/constants/app_colors.dart';
+import 'package:indigenous_plant/core/config/text_styles.dart';
+import 'package:indigenous_plant/shared/constants/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
