@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:indigenous_plant/config/text_styles.dart';
-import 'package:indigenous_plant/core/constants/app_colors.dart';
-import 'package:indigenous_plant/core/constants/constants.dart';
-import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/widgets/suggest_grid_view.dart';
+import 'package:indigenous_plant/core/config/text_styles.dart';
+import 'package:indigenous_plant/shared/constants/app_colors.dart';
+import 'package:indigenous_plant/shared/constants/constants.dart';
+import 'package:indigenous_plant/shared/constants/extension.dart';
+import 'package:indigenous_plant/features/home/widgets/suggest_grid_view.dart';
 import 'package:indigenous_plant/features/search/features/most_recent_search.dart';
 
 class HomePage extends ConsumerStatefulWidget {

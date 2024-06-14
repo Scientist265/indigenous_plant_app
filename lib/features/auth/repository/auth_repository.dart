@@ -5,9 +5,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:indigenous_plant/features/auth/models/user_model.dart';
 
-import '../../../core/constants/firebase_collection_names.dart';
-import '../../../core/constants/storage_folder_names.dart';
-import '../../../core/utils/utils.dart';
+import '../../../core/logger.dart';
+import '../../../shared/constants/firebase_collection_names.dart';
+import '../../../shared/constants/storage_folder_names.dart';
+import '../../../shared/util_funcs.dart';
 
 class AuthRepository {
   final _auth = FirebaseAuth.instance;
@@ -36,7 +37,7 @@ class AuthRepository {
       } else if (e.code == "user-not-found") {
         showToastMessage(text: "User not found");
       }
-      print(e);
+      Logger.info(location: "Auth Repo", message: e.toString());
     }
     return null;
   }
@@ -110,7 +111,7 @@ class AuthRepository {
       } else if (e.code == "user-not-found") {
         showToastMessage(text: "User not found");
       }
-      print(e);
+      Logger.info(location: "Auth Repo", message: e.toString());
     }
     return null;
   }
