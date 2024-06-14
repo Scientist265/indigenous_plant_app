@@ -9,8 +9,6 @@ import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/core/widgets/text_field.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/create_account.dart';
-
-import '../../../../config/routes.dart';
 import '../../../../core/utils/utils.dart';
 import '../../providers/auth_provider.dart';
 

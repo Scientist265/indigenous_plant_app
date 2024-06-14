@@ -34,7 +34,6 @@ class AuthRepository {
       } else if (e.code == "user-not-found") {
         showToastMessage(text: "User not found");
       }
-      print(e);
     }
     return null;
   }

@@ -4,6 +4,7 @@ import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
+import 'package:indigenous_plant/database/category_database.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/rating_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
@@ -31,7 +32,6 @@ class PlantDetailPage extends StatefulWidget {
 }
 
 class _PlantDetailPageState extends State<PlantDetailPage> {
-  final int _initPosition = 0;
   int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
@@ -51,15 +51,16 @@ class _PlantDetailPageState extends State<PlantDetailPage> {
                       height: Constants.kheight * 0.25,
                       child: PageView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemCount: widget.images.length,
+                        itemCount: 3,
                         itemBuilder: (_, index) {
-                          final image = widget.images[index];
+                          final images = subCategories[index];
+                          final image = images.imgPaths;
                           return Container(
                             height: 197.h,
                             width: Constants.kWidth,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(image),
+                              image: AssetImage(image?[0] ?? ""),
                               fit: BoxFit.cover,
                             )),
                           );

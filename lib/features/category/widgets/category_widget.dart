@@ -3,8 +3,6 @@ import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 
-import '../utils/constants.dart';
-
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({
     super.key,

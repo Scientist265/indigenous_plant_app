@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,7 +9,6 @@ import 'package:indigenous_plant/core/screens/loader.dart';
 import 'package:indigenous_plant/core/screens/splash_screen.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/login.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/verify_email_screen.dart';
-import 'package:indigenous_plant/features/navbar/home/home_dart.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -18,11 +16,11 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(DevicePreview(builder: (context) {
-    return const ProviderScope(
+  runApp(
+    const ProviderScope(
       child: PlantApp(),
-    );
-  }));
+    ),
+  );
 }
 
 class PlantApp extends StatelessWidget {

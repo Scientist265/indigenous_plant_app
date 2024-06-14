@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/features/category/category_main.dart';
 import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
-import 'package:indigenous_plant/features/navbar/home/plant_detail_page.dart';
-
-import '../../../../core/constants/app_colors.dart';
 import 'custom_text_field.dart';
 
 class CategorySearch extends StatefulWidget {
-  const CategorySearch({super.key});
+  const CategorySearch({super.key, required this.categoryName, required this.imgPath});
   static const routeName = "/category-search";
+  final String categoryName;
+  final String imgPath;
 
   @override
   State<CategorySearch> createState() => _CategorySearchState();
@@ -51,9 +49,8 @@ class _CategorySearchState extends State<CategorySearch> {
               "Plant Category",
               style: ApptextStyles.kHeaderStyle.copyWith(fontSize: 20),
             ),
-            10.ht,
 
-            const CategorySection()
+            const CategoryGridView()
             // Expanded(
             //     child: ListView.builder(
             //         itemCount: filteredPlants.length,

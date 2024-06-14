@@ -4,7 +4,6 @@ import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
-import 'package:indigenous_plant/features/navbar/home/plant_detail_page.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/suggest_grid_view.dart';
 import 'package:indigenous_plant/features/navbar/home/search/category_search.dart';
 
@@ -79,7 +78,7 @@ class _MostRecentSearchState extends State<MostRecentSearch> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (_) => const CategorySearch()),
+                      MaterialPageRoute(builder: (_) => const CategorySearch(categoryName: '', imgPath: '',)),
                     );
                   },
                   label: "See more"),

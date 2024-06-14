@@ -14,8 +14,6 @@ import 'package:indigenous_plant/core/widgets/text_field.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/login.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/verify_email_screen.dart';
 import 'package:indigenous_plant/features/auth/utils/utils.dart';
-
-import '../../../../config/routes.dart';
 import '../../providers/auth_provider.dart';
 
 class CreateAccount extends ConsumerStatefulWidget {

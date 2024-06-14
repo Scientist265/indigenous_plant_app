@@ -1,11 +1,6 @@
 // ignore_for_file:  sort_constructors_first
 // ignore_for_file: public_member_api_docs, sort_constructors_firs
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-
-import '../../../core/constants/constants.dart';
-import '../../../core/constants/firebase_field_names.dart';
 
 @immutable
 class CategoryModel {
