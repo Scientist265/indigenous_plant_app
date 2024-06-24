@@ -24,7 +24,7 @@ class CategoryWidget extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 15),
             height: 120,
             width: 150,
-            decoration: BoxDecoration(
+            decoration: BoxDecoration(  
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 image: AssetImage(imgPath),

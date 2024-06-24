@@ -7,6 +7,8 @@ import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
 import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/plant_detail_page.dart';
 
+import '../search/features/detail_pages/suggested_plant_detail.dart';
+
 class SuggestedGridView extends StatelessWidget {
   const SuggestedGridView({super.key});
 
@@ -28,7 +30,7 @@ class SuggestedGridView extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => PlantDetailPage(
+                  builder: (_) => SuggestedPlantDetailPage(
                     imgPath: "${plants.imgPath}",
                     plantName: "${plants.plantName}",
                     images: plants.images,

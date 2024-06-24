@@ -6,13 +6,12 @@ import 'package:indigenous_plant/config/validations.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
+import 'package:indigenous_plant/core/screens/loader.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/core/widgets/text_field.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/create_account.dart';
 import '../../../../core/utils/utils.dart';
 import '../../providers/auth_provider.dart';
-
-
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -26,7 +25,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool isLoading = false;
-final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   Future<void> login() async {
     try {
       if (_formKey.currentState!.validate()) {
@@ -97,7 +96,7 @@ final _formKey = GlobalKey<FormState>();
                     RoundTextField(
                       controller: emailController,
                       hintText: "joejohn@gmail.com",
-                      textInputAction: TextInputAction.next,
+                      // textInputAction: TextInputAction.next,
                       validator: validateEmail,
                     ),
                     20.ht,
@@ -128,12 +127,16 @@ final _formKey = GlobalKey<FormState>();
                       ],
                     ),
                     40.ht,
-                    RoundButton(
-                      onPressed: () {
-                        login();
-                      },
-                      label: "Sign In",
-                    ),
+                    isLoading
+                        ? const Center(
+                            child: Loader(),
+                          )
+                        : RoundButton(
+                            onPressed: () {
+                              login();
+                            },
+                            label: "Sign In",
+                          ),
                     10.ht,
                     const Center(
                       child: ReusableText(

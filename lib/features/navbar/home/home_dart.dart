@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:indigenous_plant/config/text_styles.dart';
@@ -8,6 +9,8 @@ import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/features/navbar/home/search/category_search.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/suggest_grid_view.dart';
 import 'package:indigenous_plant/features/navbar/home/search/features/most_recent_search.dart';
+import 'package:indigenous_plant/features/navbar/profile/profile.dart';
+import 'package:translator/translator.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -19,12 +22,23 @@ class HomePage extends ConsumerStatefulWidget {
 }
 
 class _HomePageState extends ConsumerState<HomePage> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void openDrawer(BuildContext context) {
+    scaffoldKey.currentState!.openDrawer(); // Open the drawer
+  }
+
+  final translator = GoogleTranslator();
+  final input = "Welcome";
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.neutralColor,
       child: SafeArea(
         child: Scaffold(
+          key: scaffoldKey,
+          drawer: const AppDrawer(),
           body: SingleChildScrollView(
             child: Padding(
               padding: Constants.defaultPadding,
@@ -37,9 +51,14 @@ class _HomePageState extends ConsumerState<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      const Icon(
-                        Icons.menu,
-                        size: 40,
+                      GestureDetector(
+                        onTap: () {
+                          openDrawer(context);
+                        },
+                        child: const Icon(
+                          Icons.menu,
+                          size: 40,
+                        ),
                       ),
                       15.wt,
                       GestureDetector(
@@ -73,7 +92,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                     ],
                   ),
                   Text(
-                    "Welcome,",
+                    input,
                     style: ApptextStyles.kHeaderStyle,
                   ),
                   RichText(

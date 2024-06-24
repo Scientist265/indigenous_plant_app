@@ -5,12 +5,13 @@ import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/database/category_database.dart';
+import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/expansion_widget.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/rating_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
-class PlantDetailPage extends StatefulWidget {
-  const PlantDetailPage(
+class SuggestedPlantDetailPage extends StatefulWidget {
+  const SuggestedPlantDetailPage(
       {super.key,
       required this.imgPath,
       required this.plantName,
@@ -29,11 +30,11 @@ class PlantDetailPage extends StatefulWidget {
   final String habitat;
 
   @override
-  State<PlantDetailPage> createState() => _PlantDetailPageState();
+  State<SuggestedPlantDetailPage> createState() =>
+      _SuggestedPlantDetailPageState();
 }
 
-class _PlantDetailPageState extends State<PlantDetailPage> {
-
+class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
   int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
@@ -55,14 +56,14 @@ class _PlantDetailPageState extends State<PlantDetailPage> {
                         scrollDirection: Axis.horizontal,
                         itemCount: 3,
                         itemBuilder: (_, index) {
-                          final images = subCategories[index];
-                          final image = images.imgPaths;
+                          final plant = plantSuggestions[index];
+                          final image = plant.images;
                           return Container(
                             height: 197.h,
                             width: Constants.kWidth,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(image?[0] ?? ""),
+                              image: AssetImage(image[index]),
                               fit: BoxFit.cover,
                             )),
                           );

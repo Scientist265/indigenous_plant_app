@@ -8,7 +8,7 @@ class RoundTextField extends StatefulWidget {
       required this.controller,
       required this.hintText,
       this.keyBoardType = TextInputType.text,
-      required this.textInputAction,
+       this.textInputAction,
       this.validator,
       this.isPassword = false,
       this.suffixicon});
@@ -17,7 +17,7 @@ class RoundTextField extends StatefulWidget {
   final String hintText;
   final bool isPassword;
   final TextInputType keyBoardType;
-  final TextInputAction textInputAction;
+  final TextInputAction?textInputAction;
   final String? Function(String?)? validator;
   final Widget? suffixicon;
 
