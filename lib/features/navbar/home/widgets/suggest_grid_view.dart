@@ -5,7 +5,6 @@ import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
-import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/plant_detail_page.dart';
 
 import '../search/features/detail_pages/suggested_plant_detail.dart';
 
@@ -33,11 +32,11 @@ class SuggestedGridView extends StatelessWidget {
                   builder: (_) => SuggestedPlantDetailPage(
                     imgPath: "${plants.imgPath}",
                     plantName: "${plants.plantName}",
-                    images: plants.images,
                     plantDesc: "${plants.description}",
                     economicValue: '${plants.economicValue}',
                     localValue: '${plants.localValue}',
                     habitat: '${plants.habitat}',
+                    images: plants.images,
                   ),
                 ),
               );

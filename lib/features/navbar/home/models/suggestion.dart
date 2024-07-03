@@ -57,9 +57,9 @@ Gbogbo èyí jẹ́ ìdí tí Ilá fí jẹ́ èsò pàtàkì láàrín Yorùbá
     """  Òjò gbòòrò: Ilá fẹ́ràn ibi tí ó gbona, tí ó sì ní òjò gbòòrò. Ó dára jùlọ nígbà tí ìgbà òtútù kò sí. Òjò tó dara fún Ilá ní láàrin 75°F àti 95°F (24°C sí 35°C).
 Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń gbòòrò nínú ibi tí ìgbà gbígbóná rẹ̀ pẹ́.Ìmọ̀lẹ̀ òrùn púpọ̀: Ilá fẹ́ràn ìmọ̀lẹ̀ òrùn fún wakati mẹ̀fà sí mẹ̀jọ (6-8) ní ọjọ́ kan. Ìmọ̀lẹ̀ òrùn tí ó tó kì í ṣe pàtàkì fún igbó àwọn àtẹgùn Ilá.""",
     images: [
-      "assets/images/akoko.png",
-      "assets/images/lapalapa.png",
-      "assets/images/kankandoro.png"
+      "assets/images/akoko.jpeg",
+      "assets/images/lapalapa.jpeg",
+      "assets/images/kankandoro.jpeg"
     ],
   ),
   PlantSuggestion(

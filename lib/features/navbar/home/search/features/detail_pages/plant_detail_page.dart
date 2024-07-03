@@ -33,7 +33,6 @@ class PlantDetailPage extends StatefulWidget {
 }
 
 class _PlantDetailPageState extends State<PlantDetailPage> {
-
   int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
@@ -55,14 +54,13 @@ class _PlantDetailPageState extends State<PlantDetailPage> {
                         scrollDirection: Axis.horizontal,
                         itemCount: 3,
                         itemBuilder: (_, index) {
-                          final images = subCategories[index];
-                          final image = images.imgPaths;
+                          final plant = vegetableSubCategories[index];
                           return Container(
                             height: 197.h,
                             width: Constants.kWidth,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(image?[0] ?? ""),
+                              image: AssetImage(widget.images.elementAt(index)),
                               fit: BoxFit.cover,
                             )),
                           );
@@ -81,7 +79,7 @@ class _PlantDetailPageState extends State<PlantDetailPage> {
                         height: 20,
                         child: Center(
                             child: DotsIndicator(
-                          dotsCount: widget.images.length,
+                          dotsCount: 3,
                           position: _currentPage,
                           decorator: const DotsDecorator(
                             spacing: EdgeInsets.all(2),

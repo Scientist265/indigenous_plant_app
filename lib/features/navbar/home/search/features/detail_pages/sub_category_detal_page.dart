@@ -10,8 +10,6 @@ import 'package:indigenous_plant/core/constants/sizing.dart';
 import 'package:indigenous_plant/database/category_database.dart';
 import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/plant_detail_page.dart';
 
-import '../../../../../category/widgets/category_widget.dart';
-
 class SubCategoryDetailPage extends StatelessWidget {
   const SubCategoryDetailPage({super.key, required this.categoryName});
   final String categoryName;
@@ -58,13 +56,14 @@ class _CategorySectionState extends State<CategorySection> {
       height: Constants.kheight,
       child: ListView.builder(
           physics: const BouncingScrollPhysics(),
-          itemCount: subCategories.length,
+          itemCount: vegetableSubCategories.length,
           itemBuilder: (_, index) {
-            final subCategory = subCategories[index];
+            final subCategory = vegetableSubCategories[index];
             return SubCategoryListTile(
-                imgPath: "${subCategory.imgPaths?[0]}",
+                imgPath: "${subCategory.images?[0]}",
                 plantName:
-                    "${subCategory.botanicalName}/${subCategory.localName}");
+                    "${subCategory.botanicalName}/${subCategory.localName}",
+                images: subCategory.images?.toList() ?? []);
 
             //  CategoryWidget(
             //     imgPath: "${subCategory.}",
@@ -79,10 +78,11 @@ class SubCategoryListTile extends StatefulWidget {
     super.key,
     required this.imgPath,
     required this.plantName,
+    required this.images,
   });
   final String imgPath;
   final String plantName;
-
+  final List<String> images;
   @override
   State<SubCategoryListTile> createState() => _SubCategoryListTileState();
 }
@@ -98,16 +98,19 @@ class _SubCategoryListTileState extends State<SubCategoryListTile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        final images = subCategories[index];
-        Navigator.of(context).push(MaterialPageRoute(
+        final images = vegetableSubCategories[index];
+        Navigator.of(context).push(
+          MaterialPageRoute(
             builder: (_) => PlantDetailPage(
-                imgPath: images.imgPaths?[0] ?? "",
+                imgPath: widget.imgPath,
                 plantName: widget.plantName,
-                images: images.imgPaths ?? [],
+                images: widget.images,
                 plantDesc: images.desc ?? "",
                 economicValue: images.economicValue ?? "",
                 localValue: images.localName ?? "",
-                habitat: images.habitat ?? "")));
+                habitat: images.habitat ?? ""),
+          ),
+        );
       },
       child: Row(
         mainAxisSize: MainAxisSize.max,

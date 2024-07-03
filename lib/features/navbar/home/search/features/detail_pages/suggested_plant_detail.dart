@@ -4,7 +4,6 @@ import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/database/category_database.dart';
 import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/expansion_widget.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/rating_widget.dart';
@@ -15,15 +14,14 @@ class SuggestedPlantDetailPage extends StatefulWidget {
       {super.key,
       required this.imgPath,
       required this.plantName,
-      required this.images,
       required this.plantDesc,
       required this.economicValue,
       required this.localValue,
-      required this.habitat});
+      required this.habitat,
+      required this.images});
   final String imgPath;
   final String plantName;
   final String plantDesc;
-
   final List<String> images;
   final String economicValue;
   final String localValue;
@@ -50,6 +48,16 @@ class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
               children: [
                 Stack(
                   children: [
+                    // Container(
+                    //   height: 197.h,
+                    //   width: Constants.kWidth,
+                    //   decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //     image: AssetImage(widget.images.toList().toString()),
+                    //     fit: BoxFit.cover,
+                    //   )),
+                    // ),
+
                     SizedBox(
                       height: Constants.kheight * 0.25,
                       child: PageView.builder(
@@ -57,13 +65,12 @@ class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
                         itemCount: 3,
                         itemBuilder: (_, index) {
                           final plant = plantSuggestions[index];
-                          final image = plant.images;
                           return Container(
                             height: 197.h,
                             width: Constants.kWidth,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
-                              image: AssetImage(image[index]),
+                              image: AssetImage(widget.images.elementAt(index)),
                               fit: BoxFit.cover,
                             )),
                           );
@@ -82,7 +89,7 @@ class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
                         height: 20,
                         child: Center(
                             child: DotsIndicator(
-                          dotsCount: widget.images.length,
+                          dotsCount: 3,
                           position: _currentPage,
                           decorator: const DotsDecorator(
                             spacing: EdgeInsets.all(2),

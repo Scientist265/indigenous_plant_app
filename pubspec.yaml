@@ -54,6 +54,7 @@ dependencies:
   expansion_tile_card: ^3.0.0
   http: ^1.2.1
   translator: ^1.0.0
+  sqflite: ^2.3.3+1
 
   # firebase_app_check: ^0.2.1+8
 
