@@ -10,6 +10,7 @@ import 'package:indigenous_plant/features/navbar/home/widgets/rating_widget.dart
 import 'package:dots_indicator/dots_indicator.dart';
 
 import '../../../widgets/preview_image_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SuggestedPlantDetailPage extends StatefulWidget {
   const SuggestedPlantDetailPage(
@@ -38,6 +39,8 @@ class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
   int _currentPage = 0;
   @override
   Widget build(BuildContext context) {
+    final appText = AppLocalizations.of(context);
+
     return Container(
       color: AppColors.neutralColor,
       child: SafeArea(
@@ -131,27 +134,27 @@ class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
                       ),
                       16.ht,
                       ExpansionDetailWidget(
-                          title: "Name",
+                          title: appText!.plant_name,
                           info: widget.plantName,
                           imgPath: widget.imgPath),
                       16.ht,
                       ExpansionDetailWidget(
-                          title: "Description",
+                          title: appText.description,
                           info: widget.plantDesc,
                           imgPath: widget.imgPath),
                       16.ht,
                       ExpansionDetailWidget(
-                          title: "Economic Value",
+                          title: appText.economic_value,
                           info: widget.economicValue,
                           imgPath: widget.imgPath),
                       16.ht,
                       ExpansionDetailWidget(
-                          title: "Local Value",
+                          title: appText.local_value,
                           info: widget.localValue,
                           imgPath: widget.imgPath),
                       16.ht,
                       ExpansionDetailWidget(
-                          title: "Habitat",
+                          title: appText.habitat,
                           info: widget.habitat,
                           imgPath: widget.imgPath),
                     ],

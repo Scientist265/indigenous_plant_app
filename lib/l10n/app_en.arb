@@ -1,6 +1,26 @@
 {
     "welcome": "Welcome",
-    "welcome_desc": "To the House of Plants",
+    "to_the":"To the ",
+    "welcome_desc": " House of Plants",
     "plant_u_might_love": "Plant you might Love",
-    "intro":"A place where you can learn about indigenous plants"
+    "intro":"A place where you can learn about indigenous plants",
+    "look_for_plant": "Look for Plant",
+    "plant_category": "Plant Category",
+    "find_your_plant": "Find Your Plant",
+    "plant_name":"Plant Name",
+    "description": "Description",
+    "economic_value": "Economic Value",
+    "local_value": "Medicinal Value",
+    "habitat": "Habitat",
+    "vegetables": "Vegetables",
+    "tubers": "tubers",
+    "crops": "Crop",
+    "seeds": "Seeds",
+    "fruits": "fruit",
+    "leaves": "leaf",
+    "suggested_first_plant":"Okro",
+    "suggested_second_plant":"Bitter leaf",
+    "suggested_third_plant":"African Locust Bean",
+    "suggested_fourth_plant":"African Star Apple"
+
 }

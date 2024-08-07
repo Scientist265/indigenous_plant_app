@@ -3,10 +3,11 @@ import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/features/category/category_main.dart';
 import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
-import 'custom_text_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategorySearch extends StatefulWidget {
-  const CategorySearch({super.key, required this.categoryName, required this.imgPath});
+  const CategorySearch(
+      {super.key, required this.categoryName, required this.imgPath});
   static const routeName = "/category-search";
   final String categoryName;
   final String imgPath;
@@ -16,6 +17,8 @@ class CategorySearch extends StatefulWidget {
 }
 
 class _CategorySearchState extends State<CategorySearch> {
+
+
   //TODO : Create FilteredCategory
   List<String> filteredPlants = [];
   void filteredItems(String query) {
@@ -28,26 +31,26 @@ class _CategorySearchState extends State<CategorySearch> {
 
   @override
   Widget build(BuildContext context) {
+    final appText = AppLocalizations.of(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Text(
+            //   appText!.look_for_plant,
+            //   style: ApptextStyles.kHeaderStyle,
+            // ),
             35.ht,
-            Text(
-              "Look for Plant",
-              style: ApptextStyles.kHeaderStyle,
-            ),
-            15.ht,
-            CustomTextField(
-              hintText: "Find your plant",
-              onChanged: filteredItems,
-            ),
+            // CustomTextField(
+            //   hintText: appText.find_your_plant,
+            //   onChanged: filteredItems,
+            // ),
             6.ht,
             Text(
-              "Plant Category",
-              style: ApptextStyles.kHeaderStyle.copyWith(fontSize: 20),
+              appText!.plant_category,
+              style: ApptextStyles.kHeaderStyle.copyWith(fontSize: 22),
             ),
 
             const CategoryGridView()

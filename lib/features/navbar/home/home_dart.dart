@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/core/constants/sizing.dart';
 import 'package:indigenous_plant/features/navbar/home/search/category_search.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/suggest_grid_view.dart';
 import 'package:indigenous_plant/features/navbar/home/search/features/most_recent_search.dart';
@@ -102,7 +100,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
                   RichText(
                     text: TextSpan(
-                      text: "To the ",
+                      text: appText.to_the,
                       style: ApptextStyles.kHeaderStyle,
                       children: [
                         TextSpan(

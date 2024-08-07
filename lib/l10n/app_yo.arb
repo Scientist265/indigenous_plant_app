@@ -1,6 +1,25 @@
 {
   "welcome": "Kaabọ",
-  "welcome_desc": "Si ile ti awọn irugbin",
+  "to_the": "Si Oluwa",
+  "welcome_desc": "Ile awon eweko",
   "plant_u_might_love": "Ohun ọgbin o le nifẹ",
-  "intro": "Ibi ti o le kọ ẹkọ nipa awọn irugbin elege"
+  "intro": "Ibi ti o le kọ ẹkọ nipa awọn irugbin elege",
+  "look_for_plant": "Wa fun ọgbin",
+  "plant_category": "Ẹka ohun ọgbìn",
+  "find_your_plant": "Wa ọgbin rẹ",
+  "plant_name": "Orukọ ohun ọgbin",
+  "description": "Isapejuwe",
+  "economic_value": "Iye ọrọ aje",
+  "local_value": "Oogun iye",
+  "habitat": "Ibugbe",
+  "vegetables": "Ẹfọ",
+  "tubers": "isu",
+  "crops": "Ere-oko",
+  "seeds": "Irugbin",
+  "fruits": "eso",
+  "leaves": "ewe",
+  "suggested_first_plant": "Ila",
+  "suggested_second_plant": "Ewe",
+  "suggested_third_plant": "Iru/Igba",
+  "suggested_fourth_plant": "Agbalumo"
 }

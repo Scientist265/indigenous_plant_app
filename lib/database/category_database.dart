@@ -1,4 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
+import 'package:flutter/widgets.dart';
+
 class Category {
   final String categoryName;
   final String imgPath;
@@ -7,15 +10,6 @@ class Category {
     required this.imgPath,
   });
 }
-
-List<Category> categories = [
-  Category(categoryName: "Vegetables", imgPath: "assets/images/veggies.jpg"),
-  Category(categoryName: "Tubers", imgPath: "assets/images/tubers.webp"),
-  Category(categoryName: "Crops", imgPath: "assets/images/crops.png"),
-  Category(categoryName: "Seeds", imgPath: "assets/images/seeds.webp"),
-  Category(categoryName: "Fruits", imgPath: "assets/images/fruits.webp"),
-  Category(categoryName: "Leaves", imgPath: "assets/images/leaves.jpeg"),
-];
 
 class Vegetables {
   final String categoryName;

@@ -17,7 +17,8 @@ class PlantSuggestion {
   });
 }
 
-List<PlantSuggestion> plantSuggestions = [
+
+  List<PlantSuggestion> plantSuggestions = [
   PlantSuggestion(
     "assets/images/okro.png",
     "Ilá",
@@ -107,3 +108,4 @@ Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń g
     ],
   ),
 ];
+
