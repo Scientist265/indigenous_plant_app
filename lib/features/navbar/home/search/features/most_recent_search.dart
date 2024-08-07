@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
+import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
 import 'package:indigenous_plant/core/widgets/round_button.dart';
 import 'package:indigenous_plant/features/navbar/home/models/suggestion.dart';
@@ -8,6 +9,7 @@ import 'package:indigenous_plant/features/navbar/home/widgets/suggest_grid_view.
 import 'package:indigenous_plant/features/navbar/home/search/category_search.dart';
 
 import '../custom_text_field.dart';
+import 'detail_pages/plant_detail_page.dart';
 
 class MostRecentSearch extends StatefulWidget {
   const MostRecentSearch({super.key});
@@ -18,11 +20,22 @@ class MostRecentSearch extends StatefulWidget {
 
 class _MostRecentSearchState extends State<MostRecentSearch> {
   //TODO : Create FilteredCategory
+  List<String> plantsDb = [
+    "Ila",
+    "Efinrin",
+    "Eyin Elelebe",
+    "Akoko",
+    "Potatoes",
+    "Lettuce",
+    "Cucumber",
+    "Mushroom",
+    "Carrot",
+  ];
   List<String> filteredPlants = [];
   void filteredItems(String query) {
     setState(() {
-      List<String> plants = List.generate(plantSuggestions.length,
-          (index) => plantSuggestions[index].plantName.toString());
+      List<String> plants =
+          List.generate(plantsDb.length, (index) => plantsDb[index]);
       filteredPlants = plants.where((item) => item.contains(query)).toList();
     });
   }
@@ -72,16 +85,55 @@ class _MostRecentSearchState extends State<MostRecentSearch> {
                 onChanged: filteredItems,
               ),
               20.ht,
-              const SuggestedGridView(),
-              20.ht,
-              RoundButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => const CategorySearch(categoryName: '', imgPath: '',)),
-                    );
-                  },
-                  label: "See more"),
+              SizedBox(
+                height: Constants.kheight * 0.7,
+                width: Constants.kWidth,
+                child: ListView.builder(
+                    itemCount: filteredPlants.length,
+                    itemBuilder: (_, index) {
+                      final plant = plantSuggestions[index];
+                      final item = filteredPlants[index];
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 12.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => PlantDetailPage(
+                                  imgPath: "${plant.imgPath}",
+                                  plantName: "${plant.plantName}",
+                                  images: plant.images,
+                                  plantDesc: "${plant.description}",
+                                  economicValue: '${plant.economicValue}',
+                                  localValue: '${plant.localValue}',
+                                  habitat: '${plant.habitat}',
+                                ),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            item,
+                            style: ApptextStyles.kbuttonStyle
+                                .copyWith(color: AppColors.blackColor),
+                          ),
+                        ),
+                      );
+                    }),
+              )
+              // const SuggestedGridView(),
+              // 20.ht,
+              // RoundButton(
+              //     onPressed: () {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (_) => const CategorySearch(
+              //                   categoryName: '',
+              //                   imgPath: '',
+              //                 )),
+              //       );
+              //     },
+              //     label: "See more"),
             ],
           ),
         ),

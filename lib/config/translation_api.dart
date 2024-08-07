@@ -1,7 +1,15 @@
-class TranslationApi {
-  static const _apiKey = "AIzaSyD8_RYOAbcMJnRB3iHbKls_hdrwSwG9Yb8";
+import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
 
-  static Future<String> translate(String message, String toLanguageCode) async {
-    return "";
+final localeProvider = StateNotifierProvider<LocaleNotifier, Locale>((ref) {
+  return LocaleNotifier();
+});
+final checkboxProvider = StateProvider<bool>((ref) => true);
+
+class LocaleNotifier extends StateNotifier<Locale> {
+  LocaleNotifier() : super(const Locale("en"));
+   switchLocale(String language) {
+    state = Locale(language);
   }
 }

@@ -151,8 +151,9 @@ class Tubers {
     this.habitat,
     this.images,
   });
-  List<Tubers> tubersSubCategories = [];
 }
+
+List<Tubers> tubersSubCategories = [];
 
 class Crops {}
 

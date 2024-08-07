@@ -9,6 +9,8 @@ import 'package:indigenous_plant/features/navbar/home/widgets/expansion_widget.d
 import 'package:indigenous_plant/features/navbar/home/widgets/rating_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
+import '../../../widgets/preview_image_widget.dart';
+
 class SuggestedPlantDetailPage extends StatefulWidget {
   const SuggestedPlantDetailPage(
       {super.key,
@@ -48,16 +50,6 @@ class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
               children: [
                 Stack(
                   children: [
-                    // Container(
-                    //   height: 197.h,
-                    //   width: Constants.kWidth,
-                    //   decoration: BoxDecoration(
-                    //       image: DecorationImage(
-                    //     image: AssetImage(widget.images.toList().toString()),
-                    //     fit: BoxFit.cover,
-                    //   )),
-                    // ),
-
                     SizedBox(
                       height: Constants.kheight * 0.25,
                       child: PageView.builder(
@@ -65,14 +57,24 @@ class _SuggestedPlantDetailPageState extends State<SuggestedPlantDetailPage> {
                         itemCount: 3,
                         itemBuilder: (_, index) {
                           final plant = plantSuggestions[index];
-                          return Container(
-                            height: 197.h,
-                            width: Constants.kWidth,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage(widget.images.elementAt(index)),
-                              fit: BoxFit.cover,
-                            )),
+                          return GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (_) => PreviewImage(
+                                      imagePath:
+                                          widget.images.elementAt(index)));
+                            },
+                            child: Container(
+                              height: 197.h,
+                              width: Constants.kWidth,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                image:
+                                    AssetImage(widget.images.elementAt(index)),
+                                fit: BoxFit.cover,
+                              )),
+                            ),
                           );
                         },
                         onPageChanged: (int value) {

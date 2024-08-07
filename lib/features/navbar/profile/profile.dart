@@ -10,6 +10,8 @@ import 'package:indigenous_plant/core/constants/sizing.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/login.dart';
 import 'package:indigenous_plant/features/auth/providers/auth_provider.dart';
 
+import '../../../common/language_tile.dart';
+
 class ProfilePage extends ConsumerStatefulWidget {
   const ProfilePage({super.key});
 
@@ -83,6 +85,8 @@ class _ProfilePageState extends ConsumerState<ProfilePage> {
                     style: ApptextStyles.kPrimaryStyle,
                   ),
                 ),
+                gaph20,
+                const LanguageTile(),
                 gaph64,
                 InkWell(
                   onTap: () {
@@ -121,6 +125,8 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ProfilePage();
+    return const Scaffold(
+      body: ProfilePage(),
+    );
   }
 }

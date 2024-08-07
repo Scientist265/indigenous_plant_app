@@ -6,11 +6,12 @@ import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
+import 'package:indigenous_plant/core/constants/sizing.dart';
 import 'package:indigenous_plant/features/navbar/home/search/category_search.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/suggest_grid_view.dart';
 import 'package:indigenous_plant/features/navbar/home/search/features/most_recent_search.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:indigenous_plant/features/navbar/profile/profile.dart';
-import 'package:translator/translator.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -28,17 +29,14 @@ class _HomePageState extends ConsumerState<HomePage> {
     scaffoldKey.currentState!.openDrawer(); // Open the drawer
   }
 
-  final translator = GoogleTranslator();
-  final input = "Welcome";
-
   @override
   Widget build(BuildContext context) {
+    final appText = AppLocalizations.of(context);
     return Container(
       color: AppColors.neutralColor,
       child: SafeArea(
         child: Scaffold(
           key: scaffoldKey,
-          drawer: const AppDrawer(),
           body: SingleChildScrollView(
             child: Padding(
               padding: Constants.defaultPadding,
@@ -47,20 +45,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Header Search, Drawer, Dropmenu
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          openDrawer(context);
-                        },
-                        child: const Icon(
-                          Icons.menu,
-                          size: 40,
-                        ),
-                      ),
-                      15.wt,
                       GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(
@@ -88,11 +77,27 @@ class _HomePageState extends ConsumerState<HomePage> {
                               ]),
                         ),
                       ),
+                      15.wt,
+                      IconButton(
+                          padding: EdgeInsets.zero,
+                          onPressed: () {
+                            //TODO: change to Drawer if possible
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => const ProfilePage(),
+                              ),
+                            );
+                          },
+                          icon: const Icon(
+                            Icons.person,
+                            size: 40,
+                          )),
+
                       // CustomTextField(),
                     ],
                   ),
                   Text(
-                    input,
+                    appText!.welcome,
                     style: ApptextStyles.kHeaderStyle,
                   ),
                   RichText(
@@ -101,7 +106,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                       style: ApptextStyles.kHeaderStyle,
                       children: [
                         TextSpan(
-                          text: "House of Plants",
+                          text: appText.welcome_desc,
                           style: ApptextStyles.kHeaderStyle.copyWith(
                             color: AppColors.tealColor,
                           ),
@@ -111,7 +116,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
                   10.ht,
                   Text(
-                    "A place where you can learn about indigenous plants",
+                    appText.intro,
                     style: ApptextStyles.kPrimaryStyle.copyWith(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -182,7 +187,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   ),
                   20.ht,
                   Text(
-                    "Plant You might love",
+                    appText.plant_u_might_love,
                     style: ApptextStyles.kHeaderStyle,
                   ),
                   const SuggestedGridView(),
@@ -190,6 +195,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
             ),
           ),
+          //  drawer: const Drawer(),
         ),
       ),
     );
