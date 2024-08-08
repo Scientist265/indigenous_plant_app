@@ -19,11 +19,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^6.2.1
   hooks_riverpod: ^2.5.1
-  
-  # cloud_firestore: ^4.8.4
-  # firebase_auth: ^4.7.2
-  # firebase_core: ^2.15.0
-  # firebase_storage: ^11.2.5
 
   # generating ids for users
   uuid: ^4.2.2
@@ -34,10 +29,6 @@ dependencies:
   # show toast message
   fluttertoast: ^8.2.2
 
-  # pick images
-  image_picker: ^1.0.2
-
-  # play videos
   flutter_screenutil: ^5.9.0
   iconify_flutter: ^0.0.5
   flutter_svg: ^1.1.6
@@ -52,9 +43,6 @@ dependencies:
   device_preview: ^1.1.0
   supabase_flutter: ^2.5.5
   expansion_tile_card: ^3.0.0
-  http: ^1.2.1
-  translator: ^1.0.0
-  sqflite: ^2.3.3+1
   photo_view: ^0.15.0
   flutter_localization: ^0.2.1
   intl: ^0.18.1

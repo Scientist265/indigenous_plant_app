@@ -4,12 +4,13 @@ import 'package:indigenous_plant/config/text_styles.dart';
 import 'package:indigenous_plant/core/constants/app_colors.dart';
 import 'package:indigenous_plant/core/constants/constants.dart';
 import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/database/category_database.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/expansion_widget.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/preview_image_widget.dart';
 import 'package:indigenous_plant/features/navbar/home/widgets/rating_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../../../../database/vegetables.dart';
 
 class PlantDetailPage extends StatefulWidget {
   const PlantDetailPage(
@@ -58,7 +59,7 @@ class _PlantDetailPageState extends State<PlantDetailPage> {
                         scrollDirection: Axis.horizontal,
                         itemCount: 3,
                         itemBuilder: (_, index) {
-                          final plant = vegetableSubCategories[index];
+                          final plant = [index];
                           return GestureDetector(
                             onTap: () {
                               showDialog(

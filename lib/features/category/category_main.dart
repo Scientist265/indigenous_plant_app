@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:indigenous_plant/database/category_database.dart';
 import 'package:indigenous_plant/features/category/widgets/category_widget.dart';
-import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/sub_category_detal_page.dart';
+import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/vegetables_listView.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryGridView extends StatelessWidget {
@@ -40,12 +40,16 @@ class CategoryGridView extends StatelessWidget {
           // final plant = plantSuggestions[index];
           return InkWell(
             onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => SubCategoryDetailPage(
-                      categoryName: category.categoryName),
-                ),
-              );
+              if (category.categoryName == appText.vegetables) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => SubCategoryDetailPage(
+                        categoryName: category.categoryName),
+                  ),
+                );
+              } else if(category.categoryName == appText.vegetables) {
+                print(category.categoryName);
+              }
             },
             child: CategoryWidget(
               imgPath: category.imgPath,

@@ -16,7 +16,6 @@ class SuggestedGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     final appText = AppLocalizations.of(context);
 
-   
     List<PlantSuggestion> plantSuggestions = [
       PlantSuggestion(
         "assets/images/okro.png",
@@ -117,8 +116,7 @@ Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń g
           crossAxisSpacing: 18.0, // spacing between columns
         ),
         padding: const EdgeInsets.all(8.0), // padding around the grid
-        itemCount:
-            plantSuggestions.length, // total number of items
+        itemCount: plantSuggestions.length, // total number of items
         itemBuilder: (context, index) {
           final plants = plantSuggestions[index];
           return InkWell(
