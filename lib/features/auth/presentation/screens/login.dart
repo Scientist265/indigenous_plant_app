@@ -132,9 +132,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                             child: Loader(),
                           )
                         : RoundButton(
-                            onPressed: () {
-                              login();
-                            },
+                            onPressed:login,
                             label: "Sign In",
                           ),
                     10.ht,

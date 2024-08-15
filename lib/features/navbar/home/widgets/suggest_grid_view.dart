@@ -16,23 +16,14 @@ class SuggestedGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     final appText = AppLocalizations.of(context);
 
-    List<PlantSuggestion> plantSuggestions = [
+    List<PlantSuggestion> suggests = [
       PlantSuggestion(
-        "assets/images/okro.png",
-        appText!.suggested_first_plant,
-        """ Ilá ni igi tí ó jẹ́ ọmọ ẹ̀gbẹ́ irúgbìn, tí a tún mọ̀ sí igi tí ó ń mú èsò kan tí a ń pè ní Ilá. Ní Yorùbá, a tún lè pè ní "Ilá". Ilá jẹ́ èsò kan tí ó dùn mọ́ oúnjẹ nígbà púpọ̀, pàápàá jùlọ ní ilé Yorùbá.
-
-Igi Ilá ń dàgbà gà tó tó ẹ̀wọ̀n méta sí ẹ̀wọ̀n márùn-ún. Ó ní ewé aláwò ewé tó dàbí irún. Èsò Ilá náà jẹ́ kékeré, ó sì ní irún kékeré lórí rẹ̀. Nígbà tí a bá gé Ilá sílẹ̀, a máa ń rí irún wọ̀nyí.
-
-Nígbà tí a bá dáná Ilá, ó máa ń tú ìtò kan jáde tí ó ń ràn ìdáná lọ́wọ́ láti sọ àwọn oúnjẹ pọ̀. Èyí mú kí Ilá jẹ́ èròjà pàtàkì fún obè, pàápàá jùlọ fún obè Ilá. Obè Ilá jẹ́ irú obè kan tí a máa ń ṣe pẹ̀lú Ilá àti ewúrẹ́, adìẹ, tàbí ẹran mìíràn.
-
-Ilá tún ní oríṣiríṣi ìwòsàn lárà rẹ̀. Ó ní vitamin C, àti oríṣiríṣi ohun alumọ̀ni tí ó jẹ́ kí ó dára fún ara àti ètò ìdábòbò ara. A máa ń lo Ilá fún ìtójú arùn bí eèbì, ìtò súgà, àti ìṣòro inú.
-
-Gbogbo èyí jẹ́ ìdí tí Ilá fí jẹ́ èsò pàtàkì láàrín Yorùbá, tí a sì máa ń tọ́jú rẹ̀ dáadáa nínú ọ̀kọ wa.""",
-        """" Ilá máa ń ṣe agbára fún ètò-òṣèlú nígbà tí wọ́n bá fi hàn nínú ọjà ìṣòwò òkèèrè. Àwọn ilẹ̀ bí Nàìjíríà, Gàna, àti àwọn ilé iṣẹ́ tó wọ́pọ̀ máa ń fojú sókè sí gbígba Ilá nítorí iye tó wúlò tí ó ní nínú ọjà ilé àti òkèèrè.""",
-        """ Ilá máa ń ran nípa dídi ìtẹ̀lé ẹjẹ náà mú kí o dín inú ara tó ní súgà. """,
-        """  Òjò gbòòrò: Ilá fẹ́ràn ibi tí ó gbona, tí ó sì ní òjò gbòòrò. Ó dára jùlọ nígbà tí ìgbà òtútù kò sí. Òjò tó dara fún Ilá ní láàrin 75°F àti 95°F (24°C sí 35°C).
-Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń gbòòrò nínú ibi tí ìgbà gbígbóná rẹ̀ pẹ́.Ìmọ̀lẹ̀ òrùn púpọ̀: Ilá fẹ́ràn ìmọ̀lẹ̀ òrùn fún wakati mẹ̀fà sí mẹ̀jọ (6-8) ní ọjọ́ kan. Ìmọ̀lẹ̀ òrùn tí ó tó kì í ṣe pàtàkì fún igbó àwọn àtẹgùn Ilá.""",
+        imgPath: "assets/images/okro.png",
+        plantName: appText!.okro,
+        description: appText.okro_desc,
+        economicValue: appText.okro_economic_value,
+        localValue: appText.okro_local_value,
+        habitat: appText.okro_habitat,
         images: [
           "assets/images/okro_1.png",
           "assets/images/okro_2.png",
@@ -40,69 +31,42 @@ Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń g
         ],
       ),
       PlantSuggestion(
-        "assets/images/akoko.jpeg",
-        appText.suggested_second_plant,
-        """ Ilá ni igi tí ó jẹ́ ọmọ ẹ̀gbẹ́ irúgbìn, tí a tún mọ̀ sí igi tí ó ń mú èsò kan tí a ń pè ní Ilá. Ní Yorùbá, a tún lè pè ní "Ilá". Ilá jẹ́ èsò kan tí ó dùn mọ́ oúnjẹ nígbà púpọ̀, pàápàá jùlọ ní ilé Yorùbá.
-
-Igi Ilá ń dàgbà gà tó tó ẹ̀wọ̀n méta sí ẹ̀wọ̀n márùn-ún. Ó ní ewé aláwò ewé tó dàbí irún. Èsò Ilá náà jẹ́ kékeré, ó sì ní irún kékeré lórí rẹ̀. Nígbà tí a bá gé Ilá sílẹ̀, a máa ń rí irún wọ̀nyí.
-
-Nígbà tí a bá dáná Ilá, ó máa ń tú ìtò kan jáde tí ó ń ràn ìdáná lọ́wọ́ láti sọ àwọn oúnjẹ pọ̀. Èyí mú kí Ilá jẹ́ èròjà pàtàkì fún obè, pàápàá jùlọ fún obè Ilá. Obè Ilá jẹ́ irú obè kan tí a máa ń ṣe pẹ̀lú Ilá àti ewúrẹ́, adìẹ, tàbí ẹran mìíràn.
-
-Ilá tún ní oríṣiríṣi ìwòsàn lárà rẹ̀. Ó ní vitamin C, àti oríṣiríṣi ohun alumọ̀ni tí ó jẹ́ kí ó dára fún ara àti ètò ìdábòbò ara. A máa ń lo Ilá fún ìtójú arùn bí eèbì, ìtò súgà, àti ìṣòro inú.
-
-Gbogbo èyí jẹ́ ìdí tí Ilá fí jẹ́ èsò pàtàkì láàrín Yorùbá, tí a sì máa ń tọ́jú rẹ̀ dáadáa nínú ọ̀kọ wa.""",
-        """" Ilá máa ń ṣe agbára fún ètò-òṣèlú nígbà tí wọ́n bá fi hàn nínú ọjà ìṣòwò òkèèrè. Àwọn ilẹ̀ bí Nàìjíríà, Gàna, àti àwọn ilé iṣẹ́ tó wọ́pọ̀ máa ń fojú sókè sí gbígba Ilá nítorí iye tó wúlò tí ó ní nínú ọjà ilé àti òkèèrè.""",
-        """ Ilá máa ń ran nípa dídi ìtẹ̀lé ẹjẹ náà mú kí o dín inú ara tó ní súgà. """,
-        """  Òjò gbòòrò: Ilá fẹ́ràn ibi tí ó gbona, tí ó sì ní òjò gbòòrò. Ó dára jùlọ nígbà tí ìgbà òtútù kò sí. Òjò tó dara fún Ilá ní láàrin 75°F àti 95°F (24°C sí 35°C).
-Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń gbòòrò nínú ibi tí ìgbà gbígbóná rẹ̀ pẹ́.Ìmọ̀lẹ̀ òrùn púpọ̀: Ilá fẹ́ràn ìmọ̀lẹ̀ òrùn fún wakati mẹ̀fà sí mẹ̀jọ (6-8) ní ọjọ́ kan. Ìmọ̀lẹ̀ òrùn tí ó tó kì í ṣe pàtàkì fún igbó àwọn àtẹgùn Ilá.""",
+        imgPath: "assets/images/jute_2.jpg",
+        plantName: appText.jute,
+        description: appText.jute_desc,
+        economicValue: appText.jute_economic_value,
+        localValue: appText.jute_local_value,
+        habitat: appText.jute_habitat,
         images: [
-          "assets/images/akoko.jpeg",
-          "assets/images/lapalapa.jpeg",
-          "assets/images/kankandoro.jpeg"
+          "assets/images/jute_1.jpeg",
+          "assets/images/jute_2.jpg",
+          "assets/images/jute_3.jpg"
         ],
       ),
       PlantSuggestion(
-        "assets/images/eyin_elebe.jpeg",
-        appText.suggested_third_plant,
-        """ Ilá ni igi tí ó jẹ́ ọmọ ẹ̀gbẹ́ irúgbìn, tí a tún mọ̀ sí igi tí ó ń mú èsò kan tí a ń pè ní Ilá. Ní Yorùbá, a tún lè pè ní "Ilá". Ilá jẹ́ èsò kan tí ó dùn mọ́ oúnjẹ nígbà púpọ̀, pàápàá jùlọ ní ilé Yorùbá.
-
-Igi Ilá ń dàgbà gà tó tó ẹ̀wọ̀n méta sí ẹ̀wọ̀n márùn-ún. Ó ní ewé aláwò ewé tó dàbí irún. Èsò Ilá náà jẹ́ kékeré, ó sì ní irún kékeré lórí rẹ̀. Nígbà tí a bá gé Ilá sílẹ̀, a máa ń rí irún wọ̀nyí.
-
-Nígbà tí a bá dáná Ilá, ó máa ń tú ìtò kan jáde tí ó ń ràn ìdáná lọ́wọ́ láti sọ àwọn oúnjẹ pọ̀. Èyí mú kí Ilá jẹ́ èròjà pàtàkì fún obè, pàápàá jùlọ fún obè Ilá. Obè Ilá jẹ́ irú obè kan tí a máa ń ṣe pẹ̀lú Ilá àti ewúrẹ́, adìẹ, tàbí ẹran mìíràn.
-
-Ilá tún ní oríṣiríṣi ìwòsàn lárà rẹ̀. Ó ní vitamin C, àti oríṣiríṣi ohun alumọ̀ni tí ó jẹ́ kí ó dára fún ara àti ètò ìdábòbò ara. A máa ń lo Ilá fún ìtójú arùn bí eèbì, ìtò súgà, àti ìṣòro inú.
-
-Gbogbo èyí jẹ́ ìdí tí Ilá fí jẹ́ èsò pàtàkì láàrín Yorùbá, tí a sì máa ń tọ́jú rẹ̀ dáadáa nínú ọ̀kọ wa.""",
-        """" Ilá máa ń ṣe agbára fún ètò-òṣèlú nígbà tí wọ́n bá fi hàn nínú ọjà ìṣòwò òkèèrè. Àwọn ilẹ̀ bí Nàìjíríà, Gàna, àti àwọn ilé iṣẹ́ tó wọ́pọ̀ máa ń fojú sókè sí gbígba Ilá nítorí iye tó wúlò tí ó ní nínú ọjà ilé àti òkèèrè.""",
-        """ Ilá máa ń ran nípa dídi ìtẹ̀lé ẹjẹ náà mú kí o dín inú ara tó ní súgà. """,
-        """  Òjò gbòòrò: Ilá fẹ́ràn ibi tí ó gbona, tí ó sì ní òjò gbòòrò. Ó dára jùlọ nígbà tí ìgbà òtútù kò sí. Òjò tó dara fún Ilá ní láàrin 75°F àti 95°F (24°C sí 35°C).
-Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń gbòòrò nínú ibi tí ìgbà gbígbóná rẹ̀ pẹ́.Ìmọ̀lẹ̀ òrùn púpọ̀: Ilá fẹ́ràn ìmọ̀lẹ̀ òrùn fún wakati mẹ̀fà sí mẹ̀jọ (6-8) ní ọjọ́ kan. Ìmọ̀lẹ̀ òrùn tí ó tó kì í ṣe pàtàkì fún igbó àwọn àtẹgùn Ilá.""",
+        imgPath: "assets/images/water_leave_1.jpg",
+        plantName: appText.waterleaf,
+        description: appText.waterleaf_desc,
+        economicValue: appText.waterleaf_econo,
+        localValue: appText.waterleaf_local,
+        habitat: appText.waterleaf_habitat,
         images: [
-          "assets/images/eyin_elebe.jpeg",
-          "assets/images/okro.png",
-          "assets/images/okro.png"
+          "assets/images/water_leave_1.jpg",
+          "assets/images/water_leave_2.jpg",
+          "assets/images/water_leave_3.jpg",
         ],
       ),
       PlantSuggestion(
-        "assets/images/okro.png",
-        appText.suggested_fourth_plant,
-        """ Ilá ni igi tí ó jẹ́ ọmọ ẹ̀gbẹ́ irúgbìn, tí a tún mọ̀ sí igi tí ó ń mú èsò kan tí a ń pè ní Ilá. Ní Yorùbá, a tún lè pè ní "Ilá". Ilá jẹ́ èsò kan tí ó dùn mọ́ oúnjẹ nígbà púpọ̀, pàápàá jùlọ ní ilé Yorùbá.
-
-Igi Ilá ń dàgbà gà tó ẹ̀wọ̀n méta sí ẹ̀wọ̀n márùn-ún. Ó ní ewé aláwò ewé tó dàbí irún. Èsò Ilá náà jẹ́ kékeré, ó sì ní irún kékeré lórí rẹ̀. Nígbà tí a bá gé Ilá sílẹ̀, a máa ń rí irún wọ̀nyí.
-
-Nígbà tí a bá dáná Ilá, ó máa ń tú ìtò kan jáde tí ó ń ràn ìdáná lọ́wọ́ láti sọ àwọn oúnjẹ pọ̀. Èyí mú kí Ilá jẹ́ èròjà pàtàkì fún obè, pàápàá jùlọ fún obè Ilá. Obè Ilá jẹ́ irú obè kan tí a máa ń ṣe pẹ̀lú Ilá àti ewúrẹ́, adìẹ, tàbí ẹran mìíràn.
-
-Ilá tún ní oríṣiríṣi ìwòsàn lárà rẹ̀. Ó ní vitamin C, àti oríṣiríṣi ohun alumọ̀ni tí ó jẹ́ kí ó dára fún ara àti ètò ìdábòbò ara. A máa ń lo Ilá fún ìtójú arùn bí eèbì, ìtò súgà, àti ìṣòro inú.
-
-Gbogbo èyí jẹ́ ìdí tí Ilá fí jẹ́ èsò pàtàkì láàrín Yorùbá, tí a sì máa ń tọ́jú rẹ̀ dáadáa nínú ọ̀kọ wa.""",
-        """" Ilá máa ń ṣe agbára fún ètò-òṣèlú nígbà tí wọ́n bá fi hàn nínú ọjà ìṣòwò òkèèrè. Àwọn ilẹ̀ bí Nàìjíríà, Gàna, àti àwọn ilé iṣẹ́ tó wọ́pọ̀ máa ń fojú sókè sí gbígba Ilá nítorí iye tó wúlò tí ó ní nínú ọjà ilé àti òkèèrè.""",
-        """ Ilá máa ń ran nípa dídi ìtẹ̀lé ẹjẹ náà mú kí o dín inú ara tó ní súgà. """,
-        """  Òjò gbòòrò: Ilá fẹ́ràn ibi tí ó gbona, tí ó sì ní òjò gbòòrò. Ó dára jùlọ nígbà tí ìgbà òtútù kò sí. Òjò tó dara fún Ilá ní láàrin 75°F àti 95°F (24°C sí 35°C).
-Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń gbòòrò nínú ibi tí ìgbà gbígbóná rẹ̀ pẹ́.Ìmọ̀lẹ̀ òrùn púpọ̀: Ilá fẹ́ràn ìmọ̀lẹ̀ òrùn fún wakati mẹ̀fà sí mẹ̀jọ (6-8) ní ọjọ́ kan. Ìmọ̀lẹ̀ òrùn tí ó tó kì í ṣe pàtàkì fún igbó àwọn àtẹgùn Ilá.""",
+        imgPath: "assets/images/pumpkin_1.jpeg",
+        plantName: appText.pumpkinLeaves,
+        description: appText.pumpkin_desc,
+        economicValue: appText.pumpkin_economic_value,
+        localValue: appText.pumpkin_local_value,
+        habitat: appText.pumpkin_habitat,
         images: [
-          "assets/images/okro.png",
-          "assets/images/okro.png",
-          "assets/images/okro.png"
+          "assets/images/pumpkin_1.jpeg",
+          "assets/images/pumpkin_2.png",
+          "assets/images/pumpkin_3.jpg",
         ],
       ),
     ];
@@ -116,20 +80,20 @@ Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń g
           crossAxisSpacing: 18.0, // spacing between columns
         ),
         padding: const EdgeInsets.all(8.0), // padding around the grid
-        itemCount: plantSuggestions.length, // total number of items
+        itemCount: suggests.length, // total number of items
         itemBuilder: (context, index) {
-          final plants = plantSuggestions[index];
+          final plants = suggests[index];
           return InkWell(
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (_) => SuggestedPlantDetailPage(
-                    imgPath: "${plants.imgPath}",
-                    plantName: "${plants.plantName}",
-                    plantDesc: "${plants.description}",
-                    economicValue: '${plants.economicValue}',
-                    localValue: '${plants.localValue}',
-                    habitat: '${plants.habitat}',
+                    imgPath: plants.imgPath,
+                    plantName: plants.plantName,
+                    plantDesc: plants.description,
+                    economicValue: plants.economicValue,
+                    localValue: plants.localValue,
+                    habitat: plants.habitat,
                     images: plants.images,
                   ),
                 ),
@@ -152,13 +116,13 @@ Aìkọ̀tútù: Ilá kì í fẹ́ ibi tí òtútù máa ń wà. Ilá máa ń g
                         borderRadius: BorderRadius.circular(6),
                         image: DecorationImage(
                             image: AssetImage(
-                              "${plants.imgPath}",
+                              plants.imgPath,
                             ),
                             fit: BoxFit.fitHeight)),
                   ),
                   12.ht,
                   Text(
-                    "${plants.plantName}",
+                    plants.plantName,
                     style: ApptextStyles.kLabelStyle,
                   )
                 ],

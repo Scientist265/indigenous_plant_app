@@ -8,8 +8,8 @@ import '../../../../../../database/vegetables.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../../category/widgets/subcategory_lit_tile.dart';
 
-class TuberSubCategory extends StatelessWidget {
-  const TuberSubCategory({super.key, required this.categoryName});
+class FruitListView extends StatelessWidget {
+  const FruitListView({super.key, required this.categoryName});
   final String categoryName;
 
   @override
@@ -52,56 +52,33 @@ class _CategorySectionState extends State<CategorySection> {
   Widget build(BuildContext context) {
     final appText = AppLocalizations.of(context);
 
-    final vegetable = Vegetables(
+    final fruits = Vegetables(
       vegetables: [
         SubVegetables(
-          name: appText!.yam,
-          description: appText.yam_desc,
-          economicValue: appText.yam_eco,
-          localValue: appText.yam_local,
-          habitat: appText.yam_habit,
+          name: appText!.african_star_apple,
+          description: appText.african_star_desc,
+          economicValue: appText.african_star_eco,
+          localValue: appText.african_star_local,
+          habitat: appText.african_star_habi,
           vegImages: [
-            "assets/images/yam_2.webp",
-            "assets/images/yam_3.png",
-            "assets/images/yam_1.webp",
+            "assets/images/agbalumo_1.jpeg",
+          "assets/images/agbalumo_2.webp",
+          "assets/images/agbalumo_3.webp",
           ],
         ),
         SubVegetables(
-          name: appText.cassava,
-          description: appText.cassava_desc,
-          economicValue: appText.cassava_econ,
-          localValue: appText.cassava_local,
-          habitat: appText.cassava_habitat,
+          name: appText.sugarcane,
+          description: appText.sugarcane_desc,
+          economicValue: appText.sugarcane_econ,
+          localValue: appText.sugar_cane_loca,
+          habitat: appText.sugarcane_habit,
           vegImages: [
-            "assets/images/casava_1.webp",
-            "assets/images/casava_2.jpeg",
-            "assets/images/casava_3.jpeg",
+            "assets/images/sugarcane_1.jpeg",
+            "assets/images/sugarcane_2.jpeg",
+            "assets/images/sugarcane_3.jpeg",
           ],
         ),
-        SubVegetables(
-          name: appText.cocoyam,
-          description: appText.yam_desc,
-          economicValue: appText.yam_eco,
-          localValue: appText.yam_local,
-          habitat: appText.yam_habit,
-          vegImages: [
-            "assets/images/coco_y_1.jpg",
-            "assets/images/coco_y_2.jpg",
-            "assets/images/coco_y_3.jpg",
-          ],
-        ),
-        SubVegetables(
-          name: appText.sweet_Potato,
-          description: appText.yam_desc,
-          economicValue: appText.yam_eco,
-          localValue: appText.yam_local,
-          habitat: appText.yam_habit,
-          vegImages: [
-            "assets/images/sweet_potato_1.jpeg",
-            "assets/images/sweet_potato_2.jpeg",
-            "assets/images/sweet_potato_3.jpeg",
-          ],
-        ),
+       
       ],
       categoryName: appText.vegetables,
       imgPath: "assets/images/veggies.jpg",
@@ -111,9 +88,9 @@ class _CategorySectionState extends State<CategorySection> {
       height: Constants.kheight,
       child: ListView.builder(
           physics: const BouncingScrollPhysics(),
-          itemCount: vegetable.vegetables.length,
+          itemCount: fruits.vegetables.length,
           itemBuilder: (_, index) {
-            final subCategory = vegetable.vegetables[index];
+            final subCategory = fruits.vegetables[index];
             return SubCategoryListTile(
               imgPath: subCategory.vegImages[0],
               plantName: subCategory.name,

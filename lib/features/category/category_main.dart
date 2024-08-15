@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:indigenous_plant/database/category_database.dart';
 import 'package:indigenous_plant/features/category/widgets/category_widget.dart';
+import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/fruits_listView.dart';
 import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/tubers_listView.dart';
 import 'package:indigenous_plant/features/navbar/home/search/features/detail_pages/vegetables_listView.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -53,6 +54,14 @@ class CategoryGridView extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (_) =>
                         TuberSubCategory(categoryName: category.categoryName),
+                  ),
+                );
+              }
+              else if (category.categoryName == appText.fruits) {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        FruitListView(categoryName: category.categoryName),
                   ),
                 );
               }

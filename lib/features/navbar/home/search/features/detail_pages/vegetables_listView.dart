@@ -67,15 +67,15 @@ class _CategorySectionState extends State<CategorySection> {
           ],
         ),
         SubVegetables(
-          name: appText.pumpkinLeaves,
-          description: appText.pumpkin_desc,
-          economicValue: appText.pumpkin_economic_value,
-          localValue: appText.pumpkin_local_value,
-          habitat: appText.pumpkin_habitat,
+          name: appText.scent_Leaf,
+          description: appText.scent_leaf_desc,
+          economicValue: appText.scent_leaf_econo,
+          localValue: appText.scent_leaf_local,
+          habitat: appText.scent_leaf_habitat,
           vegImages: [
-            "assets/images/jute_1.jpeg",
-            "assets/images/jute_2.jpg",
-            "assets/images/jute_3.jpg",
+            "assets/images/efinrin_1.jpg",
+            "assets/images/efinrin.jpeg",
+            "assets/images/efirin_2.webp",
           ],
         ),
         SubVegetables(
@@ -85,22 +85,45 @@ class _CategorySectionState extends State<CategorySection> {
           localValue: appText.waterleaf_local,
           habitat: appText.waterleaf_habitat,
           vegImages: [
-            "assets/images/jute_1.jpeg",
-            "assets/images/jute_2.jpg",
-            "assets/images/jute_3.jpg",
+            "assets/images/water_leave_1.jpg",
+            "assets/images/water_leave_2.jpg",
+            "assets/images/water_leave_3.jpg",
           ],
         ),
         SubVegetables(
-          name: "Flutted Pumpkin",
-          description:
-              "A leafy green vegetable with a slightly slimy texture when cooked.",
-          economicValue: "economicValue",
-          localValue: "localValue",
-          habitat: "habitat",
+          name: appText.okro,
+          description: appText.okro_desc,
+          economicValue: appText.okro_economic_value,
+          localValue: appText.okro_local_value,
+          habitat: appText.okro_habitat,
           vegImages: [
-            "assets/images/jute_1.jpeg",
-            "assets/images/jute_2.jpg",
-            "assets/images/jute_3.jpg",
+            "assets/images/okro_1.png",
+            "assets/images/okro_2.png",
+            "assets/images/okro_3.png"
+          ],
+        ),
+        SubVegetables(
+          name: appText.african_spinach,
+          description: appText.africa_spinach_desc,
+          economicValue: appText.africa_spinach_eco,
+          localValue: appText.african_spinach_local,
+          habitat: appText.african_spinach_habitat,
+          vegImages: [
+            "assets/images/african_spinach_1.jpeg",
+            "assets/images/african_spinach_2.jpeg",
+            "assets/images/african_spinach_3.jpeg",
+          ],
+        ),
+        SubVegetables(
+          name: appText.pumpkinLeaves,
+          description: appText.pumpkin_desc,
+          economicValue: appText.pumpkin_economic_value,
+          localValue: appText.pumpkin_local_value,
+          habitat: appText.pumpkin_habitat,
+          vegImages: [
+            "assets/images/pumpkin_1.jpeg",
+            "assets/images/pumpkin_2.png",
+            "assets/images/pumpkin_3.jpg",
           ],
         ),
       ],
@@ -111,7 +134,7 @@ class _CategorySectionState extends State<CategorySection> {
     return SizedBox(
       height: Constants.kheight,
       child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: vegetable.vegetables.length,
           itemBuilder: (_, index) {
             final subCategory = vegetable.vegetables[index];
@@ -128,4 +151,3 @@ class _CategorySectionState extends State<CategorySection> {
     );
   }
 }
-

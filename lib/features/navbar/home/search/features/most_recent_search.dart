@@ -7,6 +7,7 @@ import 'package:indigenous_plant/core/constants/extension.dart';
 import '../../models/suggestion.dart';
 import '../custom_text_field.dart';
 import 'detail_pages/plant_detail_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MostRecentSearch extends StatefulWidget {
   const MostRecentSearch({super.key});
@@ -16,17 +17,23 @@ class MostRecentSearch extends StatefulWidget {
 }
 
 class _MostRecentSearchState extends State<MostRecentSearch> {
-  //TODO : Create FilteredCategory
   List<String> plantsDb = [
-    "Ila",
-    "Efinrin",
-    "Eyin Elelebe",
-    "Akoko",
-    "Potatoes",
-    "Lettuce",
-    "Cucumber",
-    "Mushroom",
-    "Carrot",
+    "Jute",
+    "Pumpkin Leaves",
+    "Water leaf",
+    "Okro",
+    "Hibiscus leaf",
+    "flutted pumpkin",
+    "bitter leaf",
+    "Wild lettuce",
+    "scent leaf",
+    "yam",
+    "cassava",
+    "cocoyam",
+    "yellow yam",
+    "chinese yam",
+    "water yam",
+    "aerial yam",
   ];
   List<String> filteredPlants = [];
   void filteredItems(String query) {
@@ -39,8 +46,6 @@ class _MostRecentSearchState extends State<MostRecentSearch> {
 
   @override
   Widget build(BuildContext context) {
-     
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -53,7 +58,9 @@ class _MostRecentSearchState extends State<MostRecentSearch> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Icon(Icons.arrow_back_ios),
+                  InkWell(
+                      onTap: () => Navigator.of(context).pop(),
+                      child: const Icon(Icons.arrow_back_ios)),
                   20.wt,
                   Text(
                     "Search",
@@ -90,25 +97,25 @@ class _MostRecentSearchState extends State<MostRecentSearch> {
                 child: ListView.builder(
                     itemCount: filteredPlants.length,
                     itemBuilder: (_, index) {
-                      final plant = plantSuggestions[index];
+                      final plant = plantsDb[index];
                       final item = filteredPlants[index];
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 12.0),
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (_) => PlantDetailPage(
-                                  imgPath: "${plant.imgPath}",
-                                  plantName: "${plant.plantName}",
-                                  images: plant.images,
-                                  plantDesc: "${plant.description}",
-                                  economicValue: '${plant.economicValue}',
-                                  localValue: '${plant.localValue}',
-                                  habitat: '${plant.habitat}',
-                                ),
-                              ),
-                            );
+                            // Navigator.of(context).push(
+                            //   MaterialPageRoute(
+                            //     builder: (_) => PlantDetailPage(
+                            //       imgPath: "${plant.imgPath}",
+                            //       plantName: "${plant.plantName}",
+                            //       images: plant.images,
+                            //       plantDesc: "${plant.description}",
+                            //       economicValue: '${plant.economicValue}',
+                            //       localValue: '${plant.localValue}',
+                            //       habitat: '${plant.habitat}',
+                            //     ),
+                            //   ),
+                            // );
                           },
                           child: Text(
                             item,
@@ -119,20 +126,6 @@ class _MostRecentSearchState extends State<MostRecentSearch> {
                       );
                     }),
               )
-              // const SuggestedGridView(),
-              // 20.ht,
-              // RoundButton(
-              //     onPressed: () {
-              //       Navigator.push(
-              //         context,
-              //         MaterialPageRoute(
-              //             builder: (_) => const CategorySearch(
-              //                   categoryName: '',
-              //                   imgPath: '',
-              //                 )),
-              //       );
-              //     },
-              //     label: "See more"),
             ],
           ),
         ),

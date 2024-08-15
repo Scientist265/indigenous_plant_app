@@ -63,26 +63,11 @@ class AuthRepository {
         email: email,
         password: password,
       );
-      //Save image to Firebase
-
-      final path = _storage
-          .ref(StorageFolderNames.profilePics)
-          .child(FirebaseAuth.instance.currentUser!.uid);
-
-      if (image == null) {
-        return null;
-      }
-      final taskSnapshot = await path.putFile(image);
-      final downloadUrl = await taskSnapshot.ref.getDownloadURL();
-      // final uid = const Uuid().v1();
 
       UserModel user = UserModel(
         fullName: name,
-        birthday: birthday,
-        gender: gender,
         email: email,
         password: password,
-        profilePicUrl: downloadUrl,
         uid: _auth.currentUser!.uid,
       );
 
@@ -136,3 +121,13 @@ class AuthRepository {
     return user;
   }
 }
+
+// FirebaseFirestore.instance.collection('plants').doc(plantId).set({
+//   'name': plantName,
+//   'description': plantDescription,
+//   'economicValue': economicValue,
+//   'localValue': localValue,
+//   'habitat': habitat,
+//   'categoryId': categoryId // Reference to the category
+// });
+

@@ -8,8 +8,8 @@ import '../../../../../../database/vegetables.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../../category/widgets/subcategory_lit_tile.dart';
 
-class TuberSubCategory extends StatelessWidget {
-  const TuberSubCategory({super.key, required this.categoryName});
+class Crops extends StatelessWidget {
+  const Crops({super.key, required this.categoryName});
   final String categoryName;
 
   @override
@@ -56,22 +56,22 @@ class _CategorySectionState extends State<CategorySection> {
       vegetables: [
         SubVegetables(
           name: appText!.yam,
-          description: appText.yam_desc,
-          economicValue: appText.yam_eco,
-          localValue: appText.yam_local,
-          habitat: appText.yam_habit,
+          description: appText.jute_desc,
+          economicValue: appText.jute_economic_value,
+          localValue: appText.jute_local_value,
+          habitat: appText.jute_habitat,
           vegImages: [
-            "assets/images/yam_2.webp",
-            "assets/images/yam_3.png",
-            "assets/images/yam_1.webp",
+            "assets/images/casava_1.webp",
+            "assets/images/casava_2.jpeg",
+            "assets/images/casava_3.jpeg",
           ],
         ),
         SubVegetables(
-          name: appText.cassava,
-          description: appText.cassava_desc,
-          economicValue: appText.cassava_econ,
-          localValue: appText.cassava_local,
-          habitat: appText.cassava_habitat,
+          name: appText.taro,
+          description: appText.pumpkin_desc,
+          economicValue: appText.pumpkin_economic_value,
+          localValue: appText.pumpkin_local_value,
+          habitat: appText.pumpkin_habitat,
           vegImages: [
             "assets/images/casava_1.webp",
             "assets/images/casava_2.jpeg",
@@ -80,26 +80,79 @@ class _CategorySectionState extends State<CategorySection> {
         ),
         SubVegetables(
           name: appText.cocoyam,
-          description: appText.yam_desc,
-          economicValue: appText.yam_eco,
-          localValue: appText.yam_local,
-          habitat: appText.yam_habit,
+          description: appText.waterleaf_desc,
+          economicValue: appText.pumpkin_economic_value,
+          localValue: appText.waterleaf_local,
+          habitat: appText.waterleaf_habitat,
           vegImages: [
             "assets/images/coco_y_1.jpg",
             "assets/images/coco_y_2.jpg",
             "assets/images/coco_y_3.jpg",
           ],
         ),
+       
+        SubVegetables(
+          name: appText.cassava,
+          description: appText.jute_desc,
+          economicValue: appText.jute_economic_value,
+          localValue: appText.jute_local_value,
+          habitat: appText.jute_habitat,
+          vegImages: [
+            "assets/images/casava_1.webp",
+            "assets/images/casava_2.jpeg",
+            "assets/images/casava_3.jpeg",
+          ],
+        ),
+        
+        SubVegetables(
+          name: appText.yellow_Yam,
+          description: appText.waterleaf_desc,
+          economicValue: appText.pumpkin_economic_value,
+          localValue: appText.waterleaf_local,
+          habitat: appText.waterleaf_habitat,
+          vegImages: [
+            "assets/images/casava_1.webp",
+            "assets/images/casava_2.jpeg",
+            "assets/images/casava_3.jpeg",
+          ],
+        ),
         SubVegetables(
           name: appText.sweet_Potato,
-          description: appText.yam_desc,
-          economicValue: appText.yam_eco,
-          localValue: appText.yam_local,
-          habitat: appText.yam_habit,
+          description:
+              "A leafy green vegetable with a slightly slimy texture when cooked.",
+          economicValue: "economicValue",
+          localValue: "localValue",
+          habitat: "habitat",
           vegImages: [
-            "assets/images/sweet_potato_1.jpeg",
-            "assets/images/sweet_potato_2.jpeg",
-            "assets/images/sweet_potato_3.jpeg",
+            "assets/images/casava_1.webp",
+            "assets/images/casava_2.jpeg",
+            "assets/images/casava_3.jpeg",
+          ],
+        ),
+        SubVegetables(
+          name: appText.white_Yam,
+          description:
+              "A leafy green vegetable with a slightly slimy texture when cooked.",
+          economicValue: "economicValue",
+          localValue: "localValue",
+          habitat: "habitat",
+          vegImages: [
+            "assets/images/casava_1.webp",
+            "assets/images/casava_2.jpeg",
+            "assets/images/casava_3.jpeg",
+          ],
+        ),
+        SubVegetables(
+          name: appText.water_Yam,
+          description:
+              "A leafy green vegetable with a slightly slimy texture when cooked.",
+          economicValue: "economicValue",
+          localValue: "localValue",
+          habitat: "habitat",
+          vegImages: [
+            "assets/images/casava_1.webp",
+            "assets/images/casava_2.jpeg",
+            "assets/images/casava_3.jpeg",
           ],
         ),
       ],

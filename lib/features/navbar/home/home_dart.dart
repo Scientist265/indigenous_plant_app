@@ -147,12 +147,12 @@ class _HomePageState extends ConsumerState<HomePage> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              "There are",
+                              appText.there_are,
                               style: ApptextStyles.kLabelStyle
                                   .copyWith(color: AppColors.blackColor),
                             ),
                             Text(
-                              "100+ plants",
+                              "${appText.sixty} ${appText.plants}",
                               style: ApptextStyles.kHeaderStyle.copyWith(
                                 fontSize: 18,
                               ),
@@ -172,7 +172,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 10.w, vertical: 5.h),
                                   child: Text(
-                                    "Find yours",
+                                    appText.find_yours,
                                     style: ApptextStyles.kbuttonStyle,
                                   ),
                                 ),
