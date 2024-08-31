@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:indigenous_plant/core/constants/app_colors.dart';
+import 'package:indigenous_plant/shared/constants/app_colors.dart';
 
 class ApptextStyles {
   static TextStyle kLabelStyle = GoogleFonts.poppins(

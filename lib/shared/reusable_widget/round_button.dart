@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:indigenous_plant/config/text_styles.dart';
-import 'package:indigenous_plant/core/constants/constants.dart';
-import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/core/widgets/svg_logo.dart';
+import 'package:indigenous_plant/shared/constants/constants.dart';
+import 'package:indigenous_plant/shared/constants/extension.dart';
+import 'package:indigenous_plant/core/config/text_styles.dart';
 
 import '../constants/app_colors.dart';
+import '../util_funcs.dart';
 
 class RoundButton extends StatelessWidget {
   const RoundButton({

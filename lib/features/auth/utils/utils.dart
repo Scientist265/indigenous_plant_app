@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 String? validateEmail(String? email) {
   RegExp emailRegex = RegExp(r'^[\w\.-]+@[\w-]+\.\w{2,3}(\.\w{2,3})?$');

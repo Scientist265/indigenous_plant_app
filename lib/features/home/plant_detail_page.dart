@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:indigenous_plant/config/text_styles.dart';
-import 'package:indigenous_plant/core/constants/app_colors.dart';
-import 'package:indigenous_plant/core/constants/constants.dart';
-import 'package:indigenous_plant/core/constants/extension.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/widgets/rating_widget.dart';
+import 'package:indigenous_plant/core/config/text_styles.dart';
+import 'package:indigenous_plant/shared/constants/app_colors.dart';
+import 'package:indigenous_plant/shared/constants/constants.dart';
+import 'package:indigenous_plant/shared/constants/extension.dart';
+import 'package:indigenous_plant/features/home/widgets/rating_widget.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 
 class PlantDetailPage extends StatefulWidget {

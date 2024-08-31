@@ -1,6 +1,7 @@
 import "dart:io";
 
 import "package:flutter/material.dart";
+import "package:flutter_svg/flutter_svg.dart";
 import "package:fluttertoast/fluttertoast.dart";
 import "package:image_picker/image_picker.dart";
 
@@ -20,18 +21,18 @@ Future<File?> pickImage() async {
   return image;
 }
 
-// Future<File?> pickVideo() async {
-//   File? video;
-//   final picker = ImagePicker();
-//   final file = await picker.pickVideo(
-//     source: ImageSource.gallery,
-//     maxDuration: const Duration(minutes: 5),
-//   );
-//   if (file != null) {
-//     video = File(file.path);
-//   }
-//   return video;
-// }
+Future<File?> pickVideo() async {
+  File? video;
+  final picker = ImagePicker();
+  final file = await picker.pickVideo(
+    source: ImageSource.gallery,
+    maxDuration: const Duration(minutes: 5),
+  );
+  if (file != null) {
+    video = File(file.path);
+  }
+  return video;
+}
 
 void showToastMessage({required String text}) {
   Fluttertoast.showToast(
@@ -41,3 +42,14 @@ void showToastMessage({required String text}) {
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.BOTTOM);
 }
+
+
+
+Widget svgLogo() {
+  return SvgPicture.asset(
+    "assets/svg_logo/google.svg",
+    height: 38,
+    width: 38,
+  );
+}
+

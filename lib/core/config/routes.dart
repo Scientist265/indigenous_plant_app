@@ -1,19 +1,18 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/create_account.dart';
 import 'package:indigenous_plant/features/auth/presentation/screens/login.dart';
-import 'package:indigenous_plant/features/navbar/presentation/screens/home/home_dart.dart';
-import 'package:indigenous_plant/features/navbar/presentation/widgets/nav_bar.dart';
+import 'package:indigenous_plant/features/home/home_dart.dart';
+import 'package:indigenous_plant/core/app/root_app.dart';
 
-import '../core/screens/error_screen.dart';
-import '../features/screens/splash_screen.dart';
+import '../../shared/views/error_screen.dart';
+import '../../features/auth/presentation/screens/splash_screen.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
   splashRoute: (p0) => const SplashScreen(),
   signUpRoute: (p0) => const CreateAccount(),
   loginRoute: (p0) => const LoginScreen(),
   homeRoute: (p0) => const HomePage(),
-  navBarRoute:(p0) => const NavBar(),
+  navBarRoute: (p0) => const RootApp(),
 };
 
 String homeRoute = "/home_route";
@@ -30,7 +29,6 @@ class Routes {
         return _cupertinoRoute(const CreateAccount());
       case HomePage.routeName:
         return _cupertinoRoute(const HomePage());
-  
 
       default:
         return _cupertinoRoute(

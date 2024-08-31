@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:indigenous_plant/core/constants/app_colors.dart';
+import 'package:indigenous_plant/shared/constants/app_colors.dart';
 
 class RoundTextField extends StatefulWidget {
   const RoundTextField(

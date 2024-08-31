@@ -1,12 +1,12 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
 import "package:flutter_riverpod/flutter_riverpod.dart";
-import "package:indigenous_plant/core/constants/extension.dart";
-import "package:indigenous_plant/features/navbar/presentation/screens/home/home_dart.dart";
+import "package:indigenous_plant/shared/constants/extension.dart";
+import "package:indigenous_plant/features/home/home_dart.dart";
 
-import "../../../../core/constants/constants.dart";
-import "../../../../core/utils/utils.dart";
-import "../../../../core/widgets/round_button.dart";
+import "../../../../shared/constants/constants.dart";
+import "../../../../shared/util_funcs.dart";
+import "../../../../shared/reusable_widget/round_button.dart";
 import "../../providers/auth_provider.dart";
 
 class VerifyEmailScreen extends ConsumerWidget {
